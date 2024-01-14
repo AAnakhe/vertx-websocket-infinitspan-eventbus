@@ -1,0 +1,1259 @@
+14:53:08.500 [main] INFO  i.v.e.c.i.InfinispanClusterManager:  Cluster Manager is using Infinispan 14.0.19.Final
+14:53:08.505 [vert.x-worker-thread-0] WARN  i.v.e.c.i.InfinispanClusterManager:  Cannot find Infinispan config 'infinispan.xml', using default
+14:53:08.815 [vert.x-worker-thread-0] WARN  org.infinispan.CONFIG:  ISPN000569: Unable to persist Infinispan internal caches as no global state enabled
+14:53:08.837 [vert.x-worker-thread-0] INFO  org.infinispan.CONTAINER:  ISPN000556: Starting user marshaller 'org.infinispan.commons.marshall.ImmutableProtoStreamMarshaller'
+14:53:08.905 [vert.x-worker-thread-0] WARN  o.i.c.util.StringPropertyReplacer:  ISPN000901: Property jgroups.external_port could not be replaced as intended!
+14:53:08.905 [vert.x-worker-thread-0] WARN  o.i.c.util.StringPropertyReplacer:  ISPN000901: Property jgroups.external_addr could not be replaced as intended!
+14:53:08.971 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000078: Starting JGroups channel `ISPN` with stack `jgroups`
+14:53:08.973 [vert.x-worker-thread-0] INFO  org.jgroups.JChannel:  local_addr: ff65e206-2211-4549-b538-5c1af8b33d40, name: HP-Pavilion-Gaming-Laptop-6498
+14:53:08.980 [vert.x-worker-thread-0] INFO  org.jgroups.protocols.FD_SOCK2:  server listening on *.7900
+14:53:10.983 [vert.x-worker-thread-0] INFO  org.jgroups.protocols.pbcast.GMS:  HP-Pavilion-Gaming-Laptop-6498: no members discovered after 2000 ms: creating cluster as coordinator
+14:53:10.991 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000094: Received new cluster view for channel ISPN: [HP-Pavilion-Gaming-Laptop-6498|0] (1) [HP-Pavilion-Gaming-Laptop-6498]
+14:53:10.994 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000079: Channel `ISPN` local address is `HP-Pavilion-Gaming-Laptop-6498`, physical addresses are `[192.168.43.241:7800]`
+14:53:11.436 [vert.x-eventloop-thread-4] INFO  org.jboss.threads:  JBoss Threads version 2.3.3.Final
+14:53:59.106 [main] INFO  i.v.e.c.i.InfinispanClusterManager:  Cluster Manager is using Infinispan 14.0.19.Final
+14:53:59.113 [vert.x-worker-thread-0] WARN  i.v.e.c.i.InfinispanClusterManager:  Cannot find Infinispan config 'infinispan.xml', using default
+14:53:59.277 [vert.x-eventloop-thread-0] ERROR io.vertx.core.impl.VertxImpl:  Failed to initialize clustered Vert.x
+java.lang.NoClassDefFoundError: javax/transaction/TransactionManager
+	at org.infinispan.configuration.cache.TransactionConfiguration.<clinit>(TransactionConfiguration.java:30)
+	at org.infinispan.configuration.cache.TransactionConfigurationBuilder.<init>(TransactionConfigurationBuilder.java:44)
+	at org.infinispan.configuration.cache.ConfigurationBuilder.<init>(ConfigurationBuilder.java:55)
+	at org.infinispan.configuration.parsing.ConfigurationBuilderHolder.newConfigurationBuilder(ConfigurationBuilderHolder.java:56)
+	at org.infinispan.configuration.parsing.CacheParser.getConfigurationBuilder(CacheParser.java:1171)
+	at org.infinispan.configuration.parsing.CacheParser.parseDistributedCache(CacheParser.java:1035)
+	at org.infinispan.configuration.parsing.Parser.parseContainer(Parser.java:784)
+	at org.infinispan.configuration.parsing.Parser.readElement(Parser.java:87)
+	at org.infinispan.configuration.parsing.ParserRegistry.parseElement(ParserRegistry.java:212)
+	at org.infinispan.configuration.parsing.ParserRegistry.parse(ParserRegistry.java:195)
+	at org.infinispan.configuration.parsing.ParserRegistry.parse(ParserRegistry.java:181)
+	at org.infinispan.configuration.parsing.ParserRegistry.parse(ParserRegistry.java:164)
+	at org.infinispan.configuration.parsing.ParserRegistry.parse(ParserRegistry.java:112)
+	at io.vertx.ext.cluster.infinispan.InfinispanClusterManager.lambda$join$5(InfinispanClusterManager.java:239)
+	at io.vertx.core.impl.ContextBase.lambda$null$0(ContextBase.java:137)
+	at io.vertx.core.impl.ContextInternal.dispatch(ContextInternal.java:264)
+	at io.vertx.core.impl.ContextBase.lambda$executeBlocking$1(ContextBase.java:135)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.lang.ClassNotFoundException: javax.transaction.TransactionManager
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
+	... 21 common frames omitted
+14:53:59.282 [vert.x-eventloop-thread-0] ERROR io.vertx.core.impl.VertxImpl:  Failed to leave cluster
+java.lang.NullPointerException: Cannot invoke "io.vertx.ext.cluster.infinispan.impl.SubsCacheHelper.close()" because "this.subsCacheHelper" is null
+	at io.vertx.ext.cluster.infinispan.InfinispanClusterManager.lambda$leave$6(InfinispanClusterManager.java:290)
+	at io.vertx.core.impl.ContextBase.lambda$null$0(ContextBase.java:137)
+	at io.vertx.core.impl.ContextInternal.dispatch(ContextInternal.java:264)
+	at io.vertx.core.impl.ContextBase.lambda$executeBlocking$1(ContextBase.java:135)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+14:54:20.697 [main] INFO  i.v.e.c.i.InfinispanClusterManager:  Cluster Manager is using Infinispan 14.0.19.Final
+14:54:20.703 [vert.x-worker-thread-0] WARN  i.v.e.c.i.InfinispanClusterManager:  Cannot find Infinispan config 'infinispan.xml', using default
+14:54:20.860 [vert.x-eventloop-thread-0] ERROR io.vertx.core.impl.VertxImpl:  Failed to initialize clustered Vert.x
+java.lang.NoClassDefFoundError: javax/transaction/TransactionManager
+	at org.infinispan.configuration.cache.TransactionConfiguration.<clinit>(TransactionConfiguration.java:30)
+	at org.infinispan.configuration.cache.TransactionConfigurationBuilder.<init>(TransactionConfigurationBuilder.java:44)
+	at org.infinispan.configuration.cache.ConfigurationBuilder.<init>(ConfigurationBuilder.java:55)
+	at org.infinispan.configuration.parsing.ConfigurationBuilderHolder.newConfigurationBuilder(ConfigurationBuilderHolder.java:56)
+	at org.infinispan.configuration.parsing.CacheParser.getConfigurationBuilder(CacheParser.java:1171)
+	at org.infinispan.configuration.parsing.CacheParser.parseDistributedCache(CacheParser.java:1035)
+	at org.infinispan.configuration.parsing.Parser.parseContainer(Parser.java:784)
+	at org.infinispan.configuration.parsing.Parser.readElement(Parser.java:87)
+	at org.infinispan.configuration.parsing.ParserRegistry.parseElement(ParserRegistry.java:212)
+	at org.infinispan.configuration.parsing.ParserRegistry.parse(ParserRegistry.java:195)
+	at org.infinispan.configuration.parsing.ParserRegistry.parse(ParserRegistry.java:181)
+	at org.infinispan.configuration.parsing.ParserRegistry.parse(ParserRegistry.java:164)
+	at org.infinispan.configuration.parsing.ParserRegistry.parse(ParserRegistry.java:112)
+	at io.vertx.ext.cluster.infinispan.InfinispanClusterManager.lambda$join$5(InfinispanClusterManager.java:239)
+	at io.vertx.core.impl.ContextBase.lambda$null$0(ContextBase.java:137)
+	at io.vertx.core.impl.ContextInternal.dispatch(ContextInternal.java:264)
+	at io.vertx.core.impl.ContextBase.lambda$executeBlocking$1(ContextBase.java:135)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.lang.ClassNotFoundException: javax.transaction.TransactionManager
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
+	... 21 common frames omitted
+14:54:20.865 [vert.x-eventloop-thread-0] ERROR io.vertx.core.impl.VertxImpl:  Failed to leave cluster
+java.lang.NullPointerException: Cannot invoke "io.vertx.ext.cluster.infinispan.impl.SubsCacheHelper.close()" because "this.subsCacheHelper" is null
+	at io.vertx.ext.cluster.infinispan.InfinispanClusterManager.lambda$leave$6(InfinispanClusterManager.java:290)
+	at io.vertx.core.impl.ContextBase.lambda$null$0(ContextBase.java:137)
+	at io.vertx.core.impl.ContextInternal.dispatch(ContextInternal.java:264)
+	at io.vertx.core.impl.ContextBase.lambda$executeBlocking$1(ContextBase.java:135)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+14:56:18.622 [main] INFO  i.v.e.c.i.InfinispanClusterManager:  Cluster Manager is using Infinispan 14.0.19.Final
+14:56:18.626 [vert.x-worker-thread-0] WARN  i.v.e.c.i.InfinispanClusterManager:  Cannot find Infinispan config 'infinispan.xml', using default
+14:56:18.786 [vert.x-eventloop-thread-0] ERROR io.vertx.core.impl.VertxImpl:  Failed to initialize clustered Vert.x
+java.lang.NoClassDefFoundError: javax/transaction/TransactionManager
+	at org.infinispan.configuration.cache.TransactionConfiguration.<clinit>(TransactionConfiguration.java:30)
+	at org.infinispan.configuration.cache.TransactionConfigurationBuilder.<init>(TransactionConfigurationBuilder.java:44)
+	at org.infinispan.configuration.cache.ConfigurationBuilder.<init>(ConfigurationBuilder.java:55)
+	at org.infinispan.configuration.parsing.ConfigurationBuilderHolder.newConfigurationBuilder(ConfigurationBuilderHolder.java:56)
+	at org.infinispan.configuration.parsing.CacheParser.getConfigurationBuilder(CacheParser.java:1171)
+	at org.infinispan.configuration.parsing.CacheParser.parseDistributedCache(CacheParser.java:1035)
+	at org.infinispan.configuration.parsing.Parser.parseContainer(Parser.java:784)
+	at org.infinispan.configuration.parsing.Parser.readElement(Parser.java:87)
+	at org.infinispan.configuration.parsing.ParserRegistry.parseElement(ParserRegistry.java:212)
+	at org.infinispan.configuration.parsing.ParserRegistry.parse(ParserRegistry.java:195)
+	at org.infinispan.configuration.parsing.ParserRegistry.parse(ParserRegistry.java:181)
+	at org.infinispan.configuration.parsing.ParserRegistry.parse(ParserRegistry.java:164)
+	at org.infinispan.configuration.parsing.ParserRegistry.parse(ParserRegistry.java:112)
+	at io.vertx.ext.cluster.infinispan.InfinispanClusterManager.lambda$join$5(InfinispanClusterManager.java:239)
+	at io.vertx.core.impl.ContextBase.lambda$null$0(ContextBase.java:137)
+	at io.vertx.core.impl.ContextInternal.dispatch(ContextInternal.java:264)
+	at io.vertx.core.impl.ContextBase.lambda$executeBlocking$1(ContextBase.java:135)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.lang.ClassNotFoundException: javax.transaction.TransactionManager
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
+	... 21 common frames omitted
+14:56:18.793 [vert.x-eventloop-thread-0] ERROR io.vertx.core.impl.VertxImpl:  Failed to leave cluster
+java.lang.NullPointerException: Cannot invoke "io.vertx.ext.cluster.infinispan.impl.SubsCacheHelper.close()" because "this.subsCacheHelper" is null
+	at io.vertx.ext.cluster.infinispan.InfinispanClusterManager.lambda$leave$6(InfinispanClusterManager.java:290)
+	at io.vertx.core.impl.ContextBase.lambda$null$0(ContextBase.java:137)
+	at io.vertx.core.impl.ContextInternal.dispatch(ContextInternal.java:264)
+	at io.vertx.core.impl.ContextBase.lambda$executeBlocking$1(ContextBase.java:135)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+14:56:18.798 [vert.x-eventloop-thread-16] ERROR org.example.Main:  Main
+java.lang.NoClassDefFoundError: javax/transaction/TransactionManager
+	at org.infinispan.configuration.cache.TransactionConfiguration.<clinit>(TransactionConfiguration.java:30)
+	at org.infinispan.configuration.cache.TransactionConfigurationBuilder.<init>(TransactionConfigurationBuilder.java:44)
+	at org.infinispan.configuration.cache.ConfigurationBuilder.<init>(ConfigurationBuilder.java:55)
+	at org.infinispan.configuration.parsing.ConfigurationBuilderHolder.newConfigurationBuilder(ConfigurationBuilderHolder.java:56)
+	at org.infinispan.configuration.parsing.CacheParser.getConfigurationBuilder(CacheParser.java:1171)
+	at org.infinispan.configuration.parsing.CacheParser.parseDistributedCache(CacheParser.java:1035)
+	at org.infinispan.configuration.parsing.Parser.parseContainer(Parser.java:784)
+	at org.infinispan.configuration.parsing.Parser.readElement(Parser.java:87)
+	at org.infinispan.configuration.parsing.ParserRegistry.parseElement(ParserRegistry.java:212)
+	at org.infinispan.configuration.parsing.ParserRegistry.parse(ParserRegistry.java:195)
+	at org.infinispan.configuration.parsing.ParserRegistry.parse(ParserRegistry.java:181)
+	at org.infinispan.configuration.parsing.ParserRegistry.parse(ParserRegistry.java:164)
+	at org.infinispan.configuration.parsing.ParserRegistry.parse(ParserRegistry.java:112)
+	at io.vertx.ext.cluster.infinispan.InfinispanClusterManager.lambda$join$5(InfinispanClusterManager.java:239)
+	at io.vertx.core.impl.ContextBase.lambda$null$0(ContextBase.java:137)
+	at io.vertx.core.impl.ContextInternal.dispatch(ContextInternal.java:264)
+	at io.vertx.core.impl.ContextBase.lambda$executeBlocking$1(ContextBase.java:135)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.lang.ClassNotFoundException: javax.transaction.TransactionManager
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
+	... 21 common frames omitted
+15:06:12.528 [main] INFO  i.v.e.c.i.InfinispanClusterManager:  Cluster Manager is using Infinispan 14.0.19.Final
+15:06:12.533 [vert.x-worker-thread-0] WARN  i.v.e.c.i.InfinispanClusterManager:  Cannot find Infinispan config 'infinispan.xml', using default
+15:06:12.693 [vert.x-eventloop-thread-0] ERROR io.vertx.core.impl.VertxImpl:  Failed to initialize clustered Vert.x
+java.lang.NoClassDefFoundError: javax/transaction/TransactionManager
+	at org.infinispan.configuration.cache.TransactionConfiguration.<clinit>(TransactionConfiguration.java:30)
+	at org.infinispan.configuration.cache.TransactionConfigurationBuilder.<init>(TransactionConfigurationBuilder.java:44)
+	at org.infinispan.configuration.cache.ConfigurationBuilder.<init>(ConfigurationBuilder.java:55)
+	at org.infinispan.configuration.parsing.ConfigurationBuilderHolder.newConfigurationBuilder(ConfigurationBuilderHolder.java:56)
+	at org.infinispan.configuration.parsing.CacheParser.getConfigurationBuilder(CacheParser.java:1171)
+	at org.infinispan.configuration.parsing.CacheParser.parseDistributedCache(CacheParser.java:1035)
+	at org.infinispan.configuration.parsing.Parser.parseContainer(Parser.java:784)
+	at org.infinispan.configuration.parsing.Parser.readElement(Parser.java:87)
+	at org.infinispan.configuration.parsing.ParserRegistry.parseElement(ParserRegistry.java:212)
+	at org.infinispan.configuration.parsing.ParserRegistry.parse(ParserRegistry.java:195)
+	at org.infinispan.configuration.parsing.ParserRegistry.parse(ParserRegistry.java:181)
+	at org.infinispan.configuration.parsing.ParserRegistry.parse(ParserRegistry.java:164)
+	at org.infinispan.configuration.parsing.ParserRegistry.parse(ParserRegistry.java:112)
+	at io.vertx.ext.cluster.infinispan.InfinispanClusterManager.lambda$join$5(InfinispanClusterManager.java:239)
+	at io.vertx.core.impl.ContextBase.lambda$null$0(ContextBase.java:137)
+	at io.vertx.core.impl.ContextInternal.dispatch(ContextInternal.java:264)
+	at io.vertx.core.impl.ContextBase.lambda$executeBlocking$1(ContextBase.java:135)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.lang.ClassNotFoundException: javax.transaction.TransactionManager
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
+	... 21 common frames omitted
+15:06:12.698 [vert.x-eventloop-thread-0] ERROR io.vertx.core.impl.VertxImpl:  Failed to leave cluster
+java.lang.NullPointerException: Cannot invoke "io.vertx.ext.cluster.infinispan.impl.SubsCacheHelper.close()" because "this.subsCacheHelper" is null
+	at io.vertx.ext.cluster.infinispan.InfinispanClusterManager.lambda$leave$6(InfinispanClusterManager.java:290)
+	at io.vertx.core.impl.ContextBase.lambda$null$0(ContextBase.java:137)
+	at io.vertx.core.impl.ContextInternal.dispatch(ContextInternal.java:264)
+	at io.vertx.core.impl.ContextBase.lambda$executeBlocking$1(ContextBase.java:135)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+15:06:12.704 [vert.x-eventloop-thread-16] ERROR org.example.Main:  Main
+java.lang.NoClassDefFoundError: javax/transaction/TransactionManager
+	at org.infinispan.configuration.cache.TransactionConfiguration.<clinit>(TransactionConfiguration.java:30)
+	at org.infinispan.configuration.cache.TransactionConfigurationBuilder.<init>(TransactionConfigurationBuilder.java:44)
+	at org.infinispan.configuration.cache.ConfigurationBuilder.<init>(ConfigurationBuilder.java:55)
+	at org.infinispan.configuration.parsing.ConfigurationBuilderHolder.newConfigurationBuilder(ConfigurationBuilderHolder.java:56)
+	at org.infinispan.configuration.parsing.CacheParser.getConfigurationBuilder(CacheParser.java:1171)
+	at org.infinispan.configuration.parsing.CacheParser.parseDistributedCache(CacheParser.java:1035)
+	at org.infinispan.configuration.parsing.Parser.parseContainer(Parser.java:784)
+	at org.infinispan.configuration.parsing.Parser.readElement(Parser.java:87)
+	at org.infinispan.configuration.parsing.ParserRegistry.parseElement(ParserRegistry.java:212)
+	at org.infinispan.configuration.parsing.ParserRegistry.parse(ParserRegistry.java:195)
+	at org.infinispan.configuration.parsing.ParserRegistry.parse(ParserRegistry.java:181)
+	at org.infinispan.configuration.parsing.ParserRegistry.parse(ParserRegistry.java:164)
+	at org.infinispan.configuration.parsing.ParserRegistry.parse(ParserRegistry.java:112)
+	at io.vertx.ext.cluster.infinispan.InfinispanClusterManager.lambda$join$5(InfinispanClusterManager.java:239)
+	at io.vertx.core.impl.ContextBase.lambda$null$0(ContextBase.java:137)
+	at io.vertx.core.impl.ContextInternal.dispatch(ContextInternal.java:264)
+	at io.vertx.core.impl.ContextBase.lambda$executeBlocking$1(ContextBase.java:135)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.lang.ClassNotFoundException: javax.transaction.TransactionManager
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
+	... 21 common frames omitted
+15:19:15.990 [main] INFO  i.v.e.c.i.InfinispanClusterManager:  Cluster Manager is using Infinispan 14.0.19.Final
+15:19:15.995 [vert.x-worker-thread-0] WARN  i.v.e.c.i.InfinispanClusterManager:  Cannot find Infinispan config 'infinispan.xml', using default
+15:19:16.162 [vert.x-eventloop-thread-0] ERROR io.vertx.core.impl.VertxImpl:  Failed to initialize clustered Vert.x
+java.lang.NoClassDefFoundError: javax/transaction/TransactionManager
+	at org.infinispan.configuration.cache.TransactionConfiguration.<clinit>(TransactionConfiguration.java:30)
+	at org.infinispan.configuration.cache.TransactionConfigurationBuilder.<init>(TransactionConfigurationBuilder.java:44)
+	at org.infinispan.configuration.cache.ConfigurationBuilder.<init>(ConfigurationBuilder.java:55)
+	at org.infinispan.configuration.parsing.ConfigurationBuilderHolder.newConfigurationBuilder(ConfigurationBuilderHolder.java:56)
+	at org.infinispan.configuration.parsing.CacheParser.getConfigurationBuilder(CacheParser.java:1171)
+	at org.infinispan.configuration.parsing.CacheParser.parseDistributedCache(CacheParser.java:1035)
+	at org.infinispan.configuration.parsing.Parser.parseContainer(Parser.java:784)
+	at org.infinispan.configuration.parsing.Parser.readElement(Parser.java:87)
+	at org.infinispan.configuration.parsing.ParserRegistry.parseElement(ParserRegistry.java:212)
+	at org.infinispan.configuration.parsing.ParserRegistry.parse(ParserRegistry.java:195)
+	at org.infinispan.configuration.parsing.ParserRegistry.parse(ParserRegistry.java:181)
+	at org.infinispan.configuration.parsing.ParserRegistry.parse(ParserRegistry.java:164)
+	at org.infinispan.configuration.parsing.ParserRegistry.parse(ParserRegistry.java:112)
+	at io.vertx.ext.cluster.infinispan.InfinispanClusterManager.lambda$join$5(InfinispanClusterManager.java:239)
+	at io.vertx.core.impl.ContextBase.lambda$null$0(ContextBase.java:137)
+	at io.vertx.core.impl.ContextInternal.dispatch(ContextInternal.java:264)
+	at io.vertx.core.impl.ContextBase.lambda$executeBlocking$1(ContextBase.java:135)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.lang.ClassNotFoundException: javax.transaction.TransactionManager
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
+	... 21 common frames omitted
+15:19:16.168 [vert.x-eventloop-thread-0] ERROR io.vertx.core.impl.VertxImpl:  Failed to leave cluster
+java.lang.NullPointerException: Cannot invoke "io.vertx.ext.cluster.infinispan.impl.SubsCacheHelper.close()" because "this.subsCacheHelper" is null
+	at io.vertx.ext.cluster.infinispan.InfinispanClusterManager.lambda$leave$6(InfinispanClusterManager.java:290)
+	at io.vertx.core.impl.ContextBase.lambda$null$0(ContextBase.java:137)
+	at io.vertx.core.impl.ContextInternal.dispatch(ContextInternal.java:264)
+	at io.vertx.core.impl.ContextBase.lambda$executeBlocking$1(ContextBase.java:135)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+15:19:16.173 [vert.x-eventloop-thread-16] ERROR org.example.Main:  Main
+java.lang.NoClassDefFoundError: javax/transaction/TransactionManager
+	at org.infinispan.configuration.cache.TransactionConfiguration.<clinit>(TransactionConfiguration.java:30)
+	at org.infinispan.configuration.cache.TransactionConfigurationBuilder.<init>(TransactionConfigurationBuilder.java:44)
+	at org.infinispan.configuration.cache.ConfigurationBuilder.<init>(ConfigurationBuilder.java:55)
+	at org.infinispan.configuration.parsing.ConfigurationBuilderHolder.newConfigurationBuilder(ConfigurationBuilderHolder.java:56)
+	at org.infinispan.configuration.parsing.CacheParser.getConfigurationBuilder(CacheParser.java:1171)
+	at org.infinispan.configuration.parsing.CacheParser.parseDistributedCache(CacheParser.java:1035)
+	at org.infinispan.configuration.parsing.Parser.parseContainer(Parser.java:784)
+	at org.infinispan.configuration.parsing.Parser.readElement(Parser.java:87)
+	at org.infinispan.configuration.parsing.ParserRegistry.parseElement(ParserRegistry.java:212)
+	at org.infinispan.configuration.parsing.ParserRegistry.parse(ParserRegistry.java:195)
+	at org.infinispan.configuration.parsing.ParserRegistry.parse(ParserRegistry.java:181)
+	at org.infinispan.configuration.parsing.ParserRegistry.parse(ParserRegistry.java:164)
+	at org.infinispan.configuration.parsing.ParserRegistry.parse(ParserRegistry.java:112)
+	at io.vertx.ext.cluster.infinispan.InfinispanClusterManager.lambda$join$5(InfinispanClusterManager.java:239)
+	at io.vertx.core.impl.ContextBase.lambda$null$0(ContextBase.java:137)
+	at io.vertx.core.impl.ContextInternal.dispatch(ContextInternal.java:264)
+	at io.vertx.core.impl.ContextBase.lambda$executeBlocking$1(ContextBase.java:135)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.lang.ClassNotFoundException: javax.transaction.TransactionManager
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
+	... 21 common frames omitted
+15:19:20.789 [main] INFO  i.v.e.c.i.InfinispanClusterManager:  Cluster Manager is using Infinispan 14.0.19.Final
+15:19:20.794 [vert.x-worker-thread-0] WARN  i.v.e.c.i.InfinispanClusterManager:  Cannot find Infinispan config 'infinispan.xml', using default
+15:19:20.957 [vert.x-eventloop-thread-0] ERROR io.vertx.core.impl.VertxImpl:  Failed to initialize clustered Vert.x
+java.lang.NoClassDefFoundError: javax/transaction/TransactionManager
+	at org.infinispan.configuration.cache.TransactionConfiguration.<clinit>(TransactionConfiguration.java:30)
+	at org.infinispan.configuration.cache.TransactionConfigurationBuilder.<init>(TransactionConfigurationBuilder.java:44)
+	at org.infinispan.configuration.cache.ConfigurationBuilder.<init>(ConfigurationBuilder.java:55)
+	at org.infinispan.configuration.parsing.ConfigurationBuilderHolder.newConfigurationBuilder(ConfigurationBuilderHolder.java:56)
+	at org.infinispan.configuration.parsing.CacheParser.getConfigurationBuilder(CacheParser.java:1171)
+	at org.infinispan.configuration.parsing.CacheParser.parseDistributedCache(CacheParser.java:1035)
+	at org.infinispan.configuration.parsing.Parser.parseContainer(Parser.java:784)
+	at org.infinispan.configuration.parsing.Parser.readElement(Parser.java:87)
+	at org.infinispan.configuration.parsing.ParserRegistry.parseElement(ParserRegistry.java:212)
+	at org.infinispan.configuration.parsing.ParserRegistry.parse(ParserRegistry.java:195)
+	at org.infinispan.configuration.parsing.ParserRegistry.parse(ParserRegistry.java:181)
+	at org.infinispan.configuration.parsing.ParserRegistry.parse(ParserRegistry.java:164)
+	at org.infinispan.configuration.parsing.ParserRegistry.parse(ParserRegistry.java:112)
+	at io.vertx.ext.cluster.infinispan.InfinispanClusterManager.lambda$join$5(InfinispanClusterManager.java:239)
+	at io.vertx.core.impl.ContextBase.lambda$null$0(ContextBase.java:137)
+	at io.vertx.core.impl.ContextInternal.dispatch(ContextInternal.java:264)
+	at io.vertx.core.impl.ContextBase.lambda$executeBlocking$1(ContextBase.java:135)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.lang.ClassNotFoundException: javax.transaction.TransactionManager
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
+	... 21 common frames omitted
+15:19:20.963 [vert.x-eventloop-thread-0] ERROR io.vertx.core.impl.VertxImpl:  Failed to leave cluster
+java.lang.NullPointerException: Cannot invoke "io.vertx.ext.cluster.infinispan.impl.SubsCacheHelper.close()" because "this.subsCacheHelper" is null
+	at io.vertx.ext.cluster.infinispan.InfinispanClusterManager.lambda$leave$6(InfinispanClusterManager.java:290)
+	at io.vertx.core.impl.ContextBase.lambda$null$0(ContextBase.java:137)
+	at io.vertx.core.impl.ContextInternal.dispatch(ContextInternal.java:264)
+	at io.vertx.core.impl.ContextBase.lambda$executeBlocking$1(ContextBase.java:135)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+15:19:20.968 [vert.x-eventloop-thread-16] ERROR org.example.Main:  Main
+java.lang.NoClassDefFoundError: javax/transaction/TransactionManager
+	at org.infinispan.configuration.cache.TransactionConfiguration.<clinit>(TransactionConfiguration.java:30)
+	at org.infinispan.configuration.cache.TransactionConfigurationBuilder.<init>(TransactionConfigurationBuilder.java:44)
+	at org.infinispan.configuration.cache.ConfigurationBuilder.<init>(ConfigurationBuilder.java:55)
+	at org.infinispan.configuration.parsing.ConfigurationBuilderHolder.newConfigurationBuilder(ConfigurationBuilderHolder.java:56)
+	at org.infinispan.configuration.parsing.CacheParser.getConfigurationBuilder(CacheParser.java:1171)
+	at org.infinispan.configuration.parsing.CacheParser.parseDistributedCache(CacheParser.java:1035)
+	at org.infinispan.configuration.parsing.Parser.parseContainer(Parser.java:784)
+	at org.infinispan.configuration.parsing.Parser.readElement(Parser.java:87)
+	at org.infinispan.configuration.parsing.ParserRegistry.parseElement(ParserRegistry.java:212)
+	at org.infinispan.configuration.parsing.ParserRegistry.parse(ParserRegistry.java:195)
+	at org.infinispan.configuration.parsing.ParserRegistry.parse(ParserRegistry.java:181)
+	at org.infinispan.configuration.parsing.ParserRegistry.parse(ParserRegistry.java:164)
+	at org.infinispan.configuration.parsing.ParserRegistry.parse(ParserRegistry.java:112)
+	at io.vertx.ext.cluster.infinispan.InfinispanClusterManager.lambda$join$5(InfinispanClusterManager.java:239)
+	at io.vertx.core.impl.ContextBase.lambda$null$0(ContextBase.java:137)
+	at io.vertx.core.impl.ContextInternal.dispatch(ContextInternal.java:264)
+	at io.vertx.core.impl.ContextBase.lambda$executeBlocking$1(ContextBase.java:135)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.lang.ClassNotFoundException: javax.transaction.TransactionManager
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
+	... 21 common frames omitted
+15:19:51.292 [main] INFO  i.v.e.c.i.InfinispanClusterManager:  Cluster Manager is using Infinispan 14.0.19.Final
+15:19:51.297 [vert.x-worker-thread-0] WARN  i.v.e.c.i.InfinispanClusterManager:  Cannot find Infinispan config 'infinispan.xml', using default
+15:19:51.628 [vert.x-worker-thread-0] WARN  org.infinispan.CONFIG:  ISPN000569: Unable to persist Infinispan internal caches as no global state enabled
+15:19:51.653 [vert.x-worker-thread-0] INFO  org.infinispan.CONTAINER:  ISPN000556: Starting user marshaller 'org.infinispan.commons.marshall.ImmutableProtoStreamMarshaller'
+15:19:51.720 [vert.x-worker-thread-0] WARN  o.i.c.util.StringPropertyReplacer:  ISPN000901: Property jgroups.external_port could not be replaced as intended!
+15:19:51.720 [vert.x-worker-thread-0] WARN  o.i.c.util.StringPropertyReplacer:  ISPN000901: Property jgroups.external_addr could not be replaced as intended!
+15:19:51.783 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000078: Starting JGroups channel `ISPN` with stack `jgroups`
+15:19:51.784 [vert.x-worker-thread-0] INFO  org.jgroups.JChannel:  local_addr: 13b07e13-f079-4eaf-87a3-f3c618ae2757, name: HP-Pavilion-Gaming-Laptop-38811
+15:19:51.791 [vert.x-worker-thread-0] INFO  org.jgroups.protocols.FD_SOCK2:  server listening on *.7900
+15:19:53.793 [vert.x-worker-thread-0] INFO  org.jgroups.protocols.pbcast.GMS:  HP-Pavilion-Gaming-Laptop-38811: no members discovered after 2000 ms: creating cluster as coordinator
+15:19:53.802 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000094: Received new cluster view for channel ISPN: [HP-Pavilion-Gaming-Laptop-38811|0] (1) [HP-Pavilion-Gaming-Laptop-38811]
+15:19:53.805 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000079: Channel `ISPN` local address is `HP-Pavilion-Gaming-Laptop-38811`, physical addresses are `[192.168.43.241:7800]`
+15:19:54.268 [vert.x-eventloop-thread-4] INFO  org.jboss.threads:  JBoss Threads version 2.3.3.Final
+15:19:54.276 [vert.x-eventloop-thread-0] INFO  org.example.Main:  Vertx Instance Id: 3147c283-e8ad-4bc5-b1c3-539a026fe0e8
+15:20:18.125 [main] INFO  i.v.e.c.i.InfinispanClusterManager:  Cluster Manager is using Infinispan 14.0.19.Final
+15:20:18.131 [vert.x-worker-thread-0] WARN  i.v.e.c.i.InfinispanClusterManager:  Cannot find Infinispan config 'infinispan.xml', using default
+15:20:18.439 [vert.x-worker-thread-0] WARN  org.infinispan.CONFIG:  ISPN000569: Unable to persist Infinispan internal caches as no global state enabled
+15:20:18.462 [vert.x-worker-thread-0] INFO  org.infinispan.CONTAINER:  ISPN000556: Starting user marshaller 'org.infinispan.commons.marshall.ImmutableProtoStreamMarshaller'
+15:20:18.535 [vert.x-worker-thread-0] WARN  o.i.c.util.StringPropertyReplacer:  ISPN000901: Property jgroups.external_port could not be replaced as intended!
+15:20:18.535 [vert.x-worker-thread-0] WARN  o.i.c.util.StringPropertyReplacer:  ISPN000901: Property jgroups.external_addr could not be replaced as intended!
+15:20:18.598 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000078: Starting JGroups channel `ISPN` with stack `jgroups`
+15:20:18.599 [vert.x-worker-thread-0] INFO  org.jgroups.JChannel:  local_addr: ffa12582-a185-485a-8b19-57124e725c1b, name: HP-Pavilion-Gaming-Laptop-21083
+15:20:18.609 [vert.x-worker-thread-0] INFO  org.jgroups.protocols.FD_SOCK2:  server listening on *.7900
+15:20:20.612 [vert.x-worker-thread-0] INFO  org.jgroups.protocols.pbcast.GMS:  HP-Pavilion-Gaming-Laptop-21083: no members discovered after 2000 ms: creating cluster as coordinator
+15:20:20.626 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000094: Received new cluster view for channel ISPN: [HP-Pavilion-Gaming-Laptop-21083|0] (1) [HP-Pavilion-Gaming-Laptop-21083]
+15:20:20.631 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000079: Channel `ISPN` local address is `HP-Pavilion-Gaming-Laptop-21083`, physical addresses are `[192.168.43.241:7800]`
+15:20:21.066 [vert.x-eventloop-thread-4] INFO  org.jboss.threads:  JBoss Threads version 2.3.3.Final
+15:20:21.074 [vert.x-eventloop-thread-0] INFO  org.example.Main:  Vertx Instance Id: 460e296b-960b-459f-a21b-7e0c218a117b
+15:22:50.928 [TcpServer.Acceptor[7800]-1,ISPN,HP-Pavilion-Gaming-Laptop-21083] WARN  org.jgroups.protocols.TCP:  JGRP000006: 192.168.43.241:7800: failed accepting connection from peer Socket[addr=/192.168.43.241,port=51678,localport=7800]: java.net.SocketException: 192.168.43.241:7800: BaseServer.TcpConnection.readPeerAddress(): cookie sent by /192.168.43.241:51678 does not match own cookie; terminating connection
+15:22:51.930 [TcpServer.Acceptor[7800]-1,ISPN,HP-Pavilion-Gaming-Laptop-21083] WARN  org.jgroups.protocols.TCP:  JGRP000006: 192.168.43.241:7800: failed accepting connection from peer Socket[addr=/192.168.43.241,port=51692,localport=7800]: java.net.SocketTimeoutException: Read timed out
+15:22:51.953 [TcpServer.Acceptor[7800]-1,ISPN,HP-Pavilion-Gaming-Laptop-21083] WARN  org.jgroups.protocols.TCP:  JGRP000006: 192.168.43.241:7800: failed accepting connection from peer Socket[addr=/192.168.43.241,port=51698,localport=7800]: java.net.SocketException: 192.168.43.241:7800: BaseServer.TcpConnection.readPeerAddress(): cookie sent by /192.168.43.241:51698 does not match own cookie; terminating connection
+15:22:51.953 [TcpServer.Acceptor[7800]-1,ISPN,HP-Pavilion-Gaming-Laptop-21083] WARN  org.jgroups.protocols.TCP:  JGRP000006: 192.168.43.241:7800: failed accepting connection from peer Socket[addr=/192.168.43.241,port=51702,localport=7800]: java.net.SocketException: 192.168.43.241:7800: BaseServer.TcpConnection.readPeerAddress(): cookie sent by /192.168.43.241:51702 does not match own cookie; terminating connection
+15:22:56.965 [TcpServer.Acceptor[7800]-1,ISPN,HP-Pavilion-Gaming-Laptop-21083] WARN  org.jgroups.protocols.TCP:  JGRP000006: 192.168.43.241:7800: failed accepting connection from peer Socket[addr=/192.168.43.241,port=51714,localport=7800]: java.net.SocketException: 192.168.43.241:7800: BaseServer.TcpConnection.readPeerAddress(): cookie sent by /192.168.43.241:51714 does not match own cookie; terminating connection
+15:22:57.968 [TcpServer.Acceptor[7800]-1,ISPN,HP-Pavilion-Gaming-Laptop-21083] WARN  org.jgroups.protocols.TCP:  JGRP000006: 192.168.43.241:7800: failed accepting connection from peer Socket[addr=/192.168.43.241,port=51726,localport=7800]: java.net.SocketTimeoutException: Read timed out
+15:22:58.971 [TcpServer.Acceptor[7800]-1,ISPN,HP-Pavilion-Gaming-Laptop-21083] WARN  org.jgroups.protocols.TCP:  JGRP000006: 192.168.43.241:7800: failed accepting connection from peer Socket[addr=/192.168.43.241,port=51736,localport=7800]: java.net.SocketTimeoutException: Read timed out
+15:23:34.817 [vert.x-eventloop-thread-5] ERROR io.vertx.ext.web.RoutingContext:  Unhandled exception in router
+io.netty.handler.codec.http.websocketx.WebSocketHandshakeException: Invalid connection header
+	at io.vertx.core.http.impl.Http1xServerConnection.createHandshaker(Http1xServerConnection.java:335)
+	at io.vertx.core.http.impl.Http1xServerConnection.lambda$createWebSocket$2(Http1xServerConnection.java:303)
+	at io.vertx.core.impl.EventLoopContext.execute(EventLoopContext.java:86)
+	at io.vertx.core.impl.ContextBase.execute(ContextBase.java:225)
+	at io.vertx.core.http.impl.Http1xServerConnection.createWebSocket(Http1xServerConnection.java:293)
+	at io.vertx.core.http.impl.Http1xServerRequest.lambda$webSocket$4(Http1xServerRequest.java:467)
+	at io.vertx.core.impl.ContextInternal.dispatch(ContextInternal.java:264)
+	at io.vertx.core.impl.ContextInternal.dispatch(ContextInternal.java:246)
+	at io.vertx.core.http.impl.HttpEventHandler.handleEnd(HttpEventHandler.java:76)
+	at io.vertx.core.http.impl.Http1xServerRequest.onEnd(Http1xServerRequest.java:581)
+	at io.vertx.core.http.impl.Http1xServerRequest.lambda$pendingQueue$1(Http1xServerRequest.java:130)
+	at io.vertx.core.streams.impl.InboundBuffer.handleEvent(InboundBuffer.java:255)
+	at io.vertx.core.streams.impl.InboundBuffer.write(InboundBuffer.java:134)
+	at io.vertx.core.http.impl.Http1xServerRequest.handleEnd(Http1xServerRequest.java:562)
+	at io.vertx.core.impl.EventLoopContext.execute(EventLoopContext.java:76)
+	at io.vertx.core.impl.DuplicatedContext.execute(DuplicatedContext.java:153)
+	at io.vertx.core.http.impl.Http1xServerConnection.onEnd(Http1xServerConnection.java:212)
+	at io.vertx.core.http.impl.Http1xServerConnection.handleMessage(Http1xServerConnection.java:153)
+	at io.vertx.core.net.impl.ConnectionBase.read(ConnectionBase.java:158)
+	at io.vertx.core.net.impl.VertxHandler.channelRead(VertxHandler.java:153)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:93)
+	at io.netty.handler.codec.http.websocketx.extensions.WebSocketServerExtensionHandler.channelRead(WebSocketServerExtensionHandler.java:91)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:346)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:318)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+15:27:01.949 [main] INFO  i.v.e.c.i.InfinispanClusterManager:  Cluster Manager is using Infinispan 14.0.19.Final
+15:27:01.955 [vert.x-worker-thread-0] WARN  i.v.e.c.i.InfinispanClusterManager:  Cannot find Infinispan config 'infinispan.xml', using default
+15:27:02.264 [vert.x-worker-thread-0] WARN  org.infinispan.CONFIG:  ISPN000569: Unable to persist Infinispan internal caches as no global state enabled
+15:27:02.300 [vert.x-worker-thread-0] INFO  org.infinispan.CONTAINER:  ISPN000556: Starting user marshaller 'org.infinispan.commons.marshall.ImmutableProtoStreamMarshaller'
+15:27:02.372 [vert.x-worker-thread-0] WARN  o.i.c.util.StringPropertyReplacer:  ISPN000901: Property jgroups.external_port could not be replaced as intended!
+15:27:02.373 [vert.x-worker-thread-0] WARN  o.i.c.util.StringPropertyReplacer:  ISPN000901: Property jgroups.external_addr could not be replaced as intended!
+15:27:02.435 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000078: Starting JGroups channel `ISPN` with stack `jgroups`
+15:27:02.437 [vert.x-worker-thread-0] INFO  org.jgroups.JChannel:  local_addr: e09fd5ca-2916-450f-b673-08bbb0d93cb8, name: HP-Pavilion-Gaming-Laptop-28101
+15:27:02.444 [vert.x-worker-thread-0] INFO  org.jgroups.protocols.FD_SOCK2:  server listening on *.7900
+15:27:04.447 [vert.x-worker-thread-0] INFO  org.jgroups.protocols.pbcast.GMS:  HP-Pavilion-Gaming-Laptop-28101: no members discovered after 2000 ms: creating cluster as coordinator
+15:27:04.462 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000094: Received new cluster view for channel ISPN: [HP-Pavilion-Gaming-Laptop-28101|0] (1) [HP-Pavilion-Gaming-Laptop-28101]
+15:27:04.468 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000079: Channel `ISPN` local address is `HP-Pavilion-Gaming-Laptop-28101`, physical addresses are `[192.168.43.241:7800]`
+15:27:04.912 [vert.x-eventloop-thread-4] INFO  org.jboss.threads:  JBoss Threads version 2.3.3.Final
+15:27:04.919 [vert.x-eventloop-thread-0] INFO  org.example.Main:  Vertx Instance Id: 65adcad2-0300-401c-a683-6f3d5c187420
+15:27:06.913 [vert.x-eventloop-thread-3] INFO  o.e.verticle.PriceBrokerVerticle:  Price published to EventBus {"Apple":72.49487715796657,"HP":16.645394103510558,"Dell":69.19077729709919}
+15:27:08.906 [vert.x-eventloop-thread-3] INFO  o.e.verticle.PriceBrokerVerticle:  Price published to EventBus {"Apple":59.51969209688489,"HP":35.829268830086114,"Dell":41.18045963630107}
+15:27:10.906 [vert.x-eventloop-thread-3] INFO  o.e.verticle.PriceBrokerVerticle:  Price published to EventBus {"Apple":85.82789113124464,"HP":8.30419629876772,"Dell":88.37203628474842}
+15:27:12.906 [vert.x-eventloop-thread-3] INFO  o.e.verticle.PriceBrokerVerticle:  Price published to EventBus {"Apple":14.501165203146616,"HP":46.519303031093195,"Dell":11.872829689829455}
+15:27:14.906 [vert.x-eventloop-thread-3] INFO  o.e.verticle.PriceBrokerVerticle:  Price published to EventBus {"Apple":97.69806640782964,"HP":38.02428011128636,"Dell":51.89120421442633}
+15:27:16.906 [vert.x-eventloop-thread-3] INFO  o.e.verticle.PriceBrokerVerticle:  Price published to EventBus {"Apple":87.88653139091896,"HP":56.305805842625354,"Dell":26.200304263296058}
+15:27:18.906 [vert.x-eventloop-thread-3] INFO  o.e.verticle.PriceBrokerVerticle:  Price published to EventBus {"Apple":77.14994919227739,"HP":39.96458819947327,"Dell":32.51772469369462}
+15:27:20.906 [vert.x-eventloop-thread-3] INFO  o.e.verticle.PriceBrokerVerticle:  Price published to EventBus {"Apple":88.94206595930187,"HP":76.24715836218054,"Dell":62.07238583270952}
+15:27:22.906 [vert.x-eventloop-thread-3] INFO  o.e.verticle.PriceBrokerVerticle:  Price published to EventBus {"Apple":11.76072635157437,"HP":87.31751371952497,"Dell":98.58008201709193}
+15:27:24.906 [vert.x-eventloop-thread-3] INFO  o.e.verticle.PriceBrokerVerticle:  Price published to EventBus {"Apple":35.516865746182404,"HP":85.53080403307912,"Dell":55.191048048785575}
+15:27:26.906 [vert.x-eventloop-thread-3] INFO  o.e.verticle.PriceBrokerVerticle:  Price published to EventBus {"Apple":55.33013974197819,"HP":2.0523073070037645,"Dell":36.36637333104604}
+15:27:28.906 [vert.x-eventloop-thread-3] INFO  o.e.verticle.PriceBrokerVerticle:  Price published to EventBus {"Apple":41.58141808726255,"HP":7.749334977467626,"Dell":13.393491025759975}
+15:27:30.906 [vert.x-eventloop-thread-3] INFO  o.e.verticle.PriceBrokerVerticle:  Price published to EventBus {"Apple":15.589191916458178,"HP":69.41592904531873,"Dell":26.803289364683845}
+15:28:47.579 [main] INFO  i.v.e.c.i.InfinispanClusterManager:  Cluster Manager is using Infinispan 14.0.19.Final
+15:28:47.585 [vert.x-worker-thread-0] WARN  i.v.e.c.i.InfinispanClusterManager:  Cannot find Infinispan config 'infinispan.xml', using default
+15:28:47.914 [vert.x-worker-thread-0] WARN  org.infinispan.CONFIG:  ISPN000569: Unable to persist Infinispan internal caches as no global state enabled
+15:28:47.950 [vert.x-worker-thread-0] INFO  org.infinispan.CONTAINER:  ISPN000556: Starting user marshaller 'org.infinispan.commons.marshall.ImmutableProtoStreamMarshaller'
+15:28:48.022 [vert.x-worker-thread-0] WARN  o.i.c.util.StringPropertyReplacer:  ISPN000901: Property jgroups.external_port could not be replaced as intended!
+15:28:48.023 [vert.x-worker-thread-0] WARN  o.i.c.util.StringPropertyReplacer:  ISPN000901: Property jgroups.external_addr could not be replaced as intended!
+15:28:48.089 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000078: Starting JGroups channel `ISPN` with stack `jgroups`
+15:28:48.090 [vert.x-worker-thread-0] INFO  org.jgroups.JChannel:  local_addr: 625f5db9-c8e0-47c4-b15c-d8f1f945b2a6, name: HP-Pavilion-Gaming-Laptop-12022
+15:28:48.098 [vert.x-worker-thread-0] INFO  org.jgroups.protocols.FD_SOCK2:  server listening on *.7900
+15:28:50.100 [vert.x-worker-thread-0] INFO  org.jgroups.protocols.pbcast.GMS:  HP-Pavilion-Gaming-Laptop-12022: no members discovered after 2001 ms: creating cluster as coordinator
+15:28:50.116 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000094: Received new cluster view for channel ISPN: [HP-Pavilion-Gaming-Laptop-12022|0] (1) [HP-Pavilion-Gaming-Laptop-12022]
+15:28:50.121 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000079: Channel `ISPN` local address is `HP-Pavilion-Gaming-Laptop-12022`, physical addresses are `[192.168.43.241:7800]`
+15:28:50.567 [vert.x-eventloop-thread-4] INFO  org.jboss.threads:  JBoss Threads version 2.3.3.Final
+15:28:50.575 [vert.x-eventloop-thread-0] INFO  org.example.Main:  Vertx Instance Id: dc484ba7-b91d-4f0f-a275-567aeb2977ad
+15:31:26.029 [main] INFO  i.v.e.c.i.InfinispanClusterManager:  Cluster Manager is using Infinispan 14.0.19.Final
+15:31:26.034 [vert.x-worker-thread-0] WARN  i.v.e.c.i.InfinispanClusterManager:  Cannot find Infinispan config 'infinispan.xml', using default
+15:31:26.355 [vert.x-worker-thread-0] WARN  org.infinispan.CONFIG:  ISPN000569: Unable to persist Infinispan internal caches as no global state enabled
+15:31:26.378 [vert.x-worker-thread-0] INFO  org.infinispan.CONTAINER:  ISPN000556: Starting user marshaller 'org.infinispan.commons.marshall.ImmutableProtoStreamMarshaller'
+15:31:26.448 [vert.x-worker-thread-0] WARN  o.i.c.util.StringPropertyReplacer:  ISPN000901: Property jgroups.external_port could not be replaced as intended!
+15:31:26.448 [vert.x-worker-thread-0] WARN  o.i.c.util.StringPropertyReplacer:  ISPN000901: Property jgroups.external_addr could not be replaced as intended!
+15:31:26.503 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000078: Starting JGroups channel `ISPN` with stack `jgroups`
+15:31:26.505 [vert.x-worker-thread-0] INFO  org.jgroups.JChannel:  local_addr: a3777584-7799-41bf-b47a-aed85af662ec, name: HP-Pavilion-Gaming-Laptop-31120
+15:31:26.514 [vert.x-worker-thread-0] INFO  org.jgroups.protocols.FD_SOCK2:  server listening on *.7900
+15:31:28.517 [vert.x-worker-thread-0] INFO  org.jgroups.protocols.pbcast.GMS:  HP-Pavilion-Gaming-Laptop-31120: no members discovered after 2001 ms: creating cluster as coordinator
+15:31:28.525 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000094: Received new cluster view for channel ISPN: [HP-Pavilion-Gaming-Laptop-31120|0] (1) [HP-Pavilion-Gaming-Laptop-31120]
+15:31:28.528 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000079: Channel `ISPN` local address is `HP-Pavilion-Gaming-Laptop-31120`, physical addresses are `[192.168.43.241:7800]`
+15:31:28.961 [vert.x-eventloop-thread-4] INFO  org.jboss.threads:  JBoss Threads version 2.3.3.Final
+15:31:28.967 [vert.x-eventloop-thread-2] INFO  org.example.verticle.MainVerticle:  Deploy Verticles
+15:31:28.967 [vert.x-eventloop-thread-0] INFO  org.example.Main:  Vertx Instance Id: 89501b7a-ce10-4fe8-9dc0-7e8463b29ac5
+15:52:46.940 [main] INFO  i.v.e.c.i.InfinispanClusterManager:  Cluster Manager is using Infinispan 14.0.19.Final
+15:52:46.945 [vert.x-worker-thread-0] WARN  i.v.e.c.i.InfinispanClusterManager:  Cannot find Infinispan config 'infinispan.xml', using default
+15:52:47.269 [vert.x-worker-thread-0] WARN  org.infinispan.CONFIG:  ISPN000569: Unable to persist Infinispan internal caches as no global state enabled
+15:52:47.294 [vert.x-worker-thread-0] INFO  org.infinispan.CONTAINER:  ISPN000556: Starting user marshaller 'org.infinispan.commons.marshall.ImmutableProtoStreamMarshaller'
+15:52:47.367 [vert.x-worker-thread-0] WARN  o.i.c.util.StringPropertyReplacer:  ISPN000901: Property jgroups.external_port could not be replaced as intended!
+15:52:47.367 [vert.x-worker-thread-0] WARN  o.i.c.util.StringPropertyReplacer:  ISPN000901: Property jgroups.external_addr could not be replaced as intended!
+15:52:47.428 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000078: Starting JGroups channel `ISPN` with stack `jgroups`
+15:52:47.430 [vert.x-worker-thread-0] INFO  org.jgroups.JChannel:  local_addr: 5483b819-14ba-4ef3-8022-5d4159bf4261, name: HP-Pavilion-Gaming-Laptop-25361
+15:52:47.437 [vert.x-worker-thread-0] INFO  org.jgroups.protocols.FD_SOCK2:  server listening on *.7900
+15:52:49.439 [vert.x-worker-thread-0] INFO  org.jgroups.protocols.pbcast.GMS:  HP-Pavilion-Gaming-Laptop-25361: no members discovered after 2001 ms: creating cluster as coordinator
+15:52:49.455 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000094: Received new cluster view for channel ISPN: [HP-Pavilion-Gaming-Laptop-25361|0] (1) [HP-Pavilion-Gaming-Laptop-25361]
+15:52:49.460 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000079: Channel `ISPN` local address is `HP-Pavilion-Gaming-Laptop-25361`, physical addresses are `[192.168.43.241:7800]`
+15:52:49.901 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  WebSocket address updated to: ws://localhost:37405/prices
+15:52:49.904 [vert.x-eventloop-thread-4] INFO  org.jboss.threads:  JBoss Threads version 2.3.3.Final
+15:52:49.910 [vert.x-eventloop-thread-2] INFO  org.example.verticle.MainVerticle:  Deploy Verticles
+15:52:49.911 [vert.x-eventloop-thread-0] INFO  org.example.Main:  Vertx Instance Id: 5e8f79e8-e9a3-4556-b78b-fb0d60c93de4
+15:57:35.433 [main] INFO  i.v.e.c.i.InfinispanClusterManager:  Cluster Manager is using Infinispan 14.0.19.Final
+15:57:35.438 [vert.x-worker-thread-0] WARN  i.v.e.c.i.InfinispanClusterManager:  Cannot find Infinispan config 'infinispan.xml', using default
+15:57:35.760 [vert.x-worker-thread-0] WARN  org.infinispan.CONFIG:  ISPN000569: Unable to persist Infinispan internal caches as no global state enabled
+15:57:35.796 [vert.x-worker-thread-0] INFO  org.infinispan.CONTAINER:  ISPN000556: Starting user marshaller 'org.infinispan.commons.marshall.ImmutableProtoStreamMarshaller'
+15:57:35.870 [vert.x-worker-thread-0] WARN  o.i.c.util.StringPropertyReplacer:  ISPN000901: Property jgroups.external_port could not be replaced as intended!
+15:57:35.870 [vert.x-worker-thread-0] WARN  o.i.c.util.StringPropertyReplacer:  ISPN000901: Property jgroups.external_addr could not be replaced as intended!
+15:57:35.927 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000078: Starting JGroups channel `ISPN` with stack `jgroups`
+15:57:35.929 [vert.x-worker-thread-0] INFO  org.jgroups.JChannel:  local_addr: 15b66d01-7506-4052-9c16-d3a9d931620e, name: HP-Pavilion-Gaming-Laptop-51514
+15:57:35.936 [vert.x-worker-thread-0] INFO  org.jgroups.protocols.FD_SOCK2:  server listening on *.7900
+15:57:37.938 [vert.x-worker-thread-0] INFO  org.jgroups.protocols.pbcast.GMS:  HP-Pavilion-Gaming-Laptop-51514: no members discovered after 2001 ms: creating cluster as coordinator
+15:57:37.954 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000094: Received new cluster view for channel ISPN: [HP-Pavilion-Gaming-Laptop-51514|0] (1) [HP-Pavilion-Gaming-Laptop-51514]
+15:57:37.959 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000079: Channel `ISPN` local address is `HP-Pavilion-Gaming-Laptop-51514`, physical addresses are `[192.168.43.241:7800]`
+15:57:38.413 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  WebSocket address updated to: ws://localhost:37231/prices
+15:57:38.416 [vert.x-eventloop-thread-4] INFO  org.jboss.threads:  JBoss Threads version 2.3.3.Final
+15:57:38.422 [vert.x-eventloop-thread-2] INFO  org.example.verticle.MainVerticle:  Deploy Verticles
+15:57:38.422 [vert.x-eventloop-thread-0] INFO  org.example.Main:  Vertx Instance Id: 8a98f4b0-a3bd-45dc-ba52-f959f849b6b7
+16:00:39.658 [main] INFO  i.v.e.c.i.InfinispanClusterManager:  Cluster Manager is using Infinispan 14.0.19.Final
+16:00:39.663 [vert.x-worker-thread-0] WARN  i.v.e.c.i.InfinispanClusterManager:  Cannot find Infinispan config 'infinispan.xml', using default
+16:00:40.000 [vert.x-worker-thread-0] WARN  org.infinispan.CONFIG:  ISPN000569: Unable to persist Infinispan internal caches as no global state enabled
+16:00:40.027 [vert.x-worker-thread-0] INFO  org.infinispan.CONTAINER:  ISPN000556: Starting user marshaller 'org.infinispan.commons.marshall.ImmutableProtoStreamMarshaller'
+16:00:40.096 [vert.x-worker-thread-0] WARN  o.i.c.util.StringPropertyReplacer:  ISPN000901: Property jgroups.external_port could not be replaced as intended!
+16:00:40.096 [vert.x-worker-thread-0] WARN  o.i.c.util.StringPropertyReplacer:  ISPN000901: Property jgroups.external_addr could not be replaced as intended!
+16:00:40.160 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000078: Starting JGroups channel `ISPN` with stack `jgroups`
+16:00:40.162 [vert.x-worker-thread-0] INFO  org.jgroups.JChannel:  local_addr: c6bb2b0d-5610-41c5-ac7c-23fad8c0ff2d, name: HP-Pavilion-Gaming-Laptop-37448
+16:00:40.171 [vert.x-worker-thread-0] INFO  org.jgroups.protocols.FD_SOCK2:  server listening on *.7900
+16:00:42.174 [vert.x-worker-thread-0] INFO  org.jgroups.protocols.pbcast.GMS:  HP-Pavilion-Gaming-Laptop-37448: no members discovered after 2000 ms: creating cluster as coordinator
+16:00:42.182 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000094: Received new cluster view for channel ISPN: [HP-Pavilion-Gaming-Laptop-37448|0] (1) [HP-Pavilion-Gaming-Laptop-37448]
+16:00:42.185 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000079: Channel `ISPN` local address is `HP-Pavilion-Gaming-Laptop-37448`, physical addresses are `[192.168.43.241:7800]`
+16:00:42.639 [vert.x-eventloop-thread-4] INFO  org.jboss.threads:  JBoss Threads version 2.3.3.Final
+16:00:42.646 [vert.x-eventloop-thread-2] INFO  org.example.verticle.MainVerticle:  Deploy Verticles
+16:00:42.646 [vert.x-eventloop-thread-0] INFO  org.example.Main:  Vertx Instance Id: 49d6fa1f-ea20-41b2-a845-ef7f865030e2
+16:01:51.257 [main] INFO  i.v.e.c.i.InfinispanClusterManager:  Cluster Manager is using Infinispan 14.0.19.Final
+16:01:51.262 [vert.x-worker-thread-0] WARN  i.v.e.c.i.InfinispanClusterManager:  Cannot find Infinispan config 'infinispan.xml', using default
+16:01:51.586 [vert.x-worker-thread-0] WARN  org.infinispan.CONFIG:  ISPN000569: Unable to persist Infinispan internal caches as no global state enabled
+16:01:51.621 [vert.x-worker-thread-0] INFO  org.infinispan.CONTAINER:  ISPN000556: Starting user marshaller 'org.infinispan.commons.marshall.ImmutableProtoStreamMarshaller'
+16:01:51.691 [vert.x-worker-thread-0] WARN  o.i.c.util.StringPropertyReplacer:  ISPN000901: Property jgroups.external_port could not be replaced as intended!
+16:01:51.691 [vert.x-worker-thread-0] WARN  o.i.c.util.StringPropertyReplacer:  ISPN000901: Property jgroups.external_addr could not be replaced as intended!
+16:01:51.752 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000078: Starting JGroups channel `ISPN` with stack `jgroups`
+16:01:51.753 [vert.x-worker-thread-0] INFO  org.jgroups.JChannel:  local_addr: 22462314-b48c-4d3c-a41d-0f474ffe72be, name: HP-Pavilion-Gaming-Laptop-34105
+16:01:51.760 [vert.x-worker-thread-0] INFO  org.jgroups.protocols.FD_SOCK2:  server listening on *.7900
+16:01:53.763 [vert.x-worker-thread-0] INFO  org.jgroups.protocols.pbcast.GMS:  HP-Pavilion-Gaming-Laptop-34105: no members discovered after 2000 ms: creating cluster as coordinator
+16:01:53.771 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000094: Received new cluster view for channel ISPN: [HP-Pavilion-Gaming-Laptop-34105|0] (1) [HP-Pavilion-Gaming-Laptop-34105]
+16:01:53.776 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000079: Channel `ISPN` local address is `HP-Pavilion-Gaming-Laptop-34105`, physical addresses are `[192.168.43.241:7800]`
+16:01:54.230 [vert.x-eventloop-thread-4] INFO  org.jboss.threads:  JBoss Threads version 2.3.3.Final
+16:01:54.237 [vert.x-eventloop-thread-2] INFO  org.example.verticle.MainVerticle:  Deploy Verticles
+16:01:54.237 [vert.x-eventloop-thread-0] INFO  org.example.Main:  Vertx Instance Id: 567fbc9d-26aa-4248-9e6c-902b660e0b5c
+16:02:58.243 [main] INFO  i.v.e.c.i.InfinispanClusterManager:  Cluster Manager is using Infinispan 14.0.19.Final
+16:02:58.248 [vert.x-worker-thread-0] WARN  i.v.e.c.i.InfinispanClusterManager:  Cannot find Infinispan config 'infinispan.xml', using default
+16:02:58.591 [vert.x-worker-thread-0] WARN  org.infinispan.CONFIG:  ISPN000569: Unable to persist Infinispan internal caches as no global state enabled
+16:02:58.615 [vert.x-worker-thread-0] INFO  org.infinispan.CONTAINER:  ISPN000556: Starting user marshaller 'org.infinispan.commons.marshall.ImmutableProtoStreamMarshaller'
+16:02:58.688 [vert.x-worker-thread-0] WARN  o.i.c.util.StringPropertyReplacer:  ISPN000901: Property jgroups.external_port could not be replaced as intended!
+16:02:58.688 [vert.x-worker-thread-0] WARN  o.i.c.util.StringPropertyReplacer:  ISPN000901: Property jgroups.external_addr could not be replaced as intended!
+16:02:58.758 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000078: Starting JGroups channel `ISPN` with stack `jgroups`
+16:02:58.758 [vert.x-worker-thread-0] INFO  org.jgroups.JChannel:  local_addr: a82da04f-91bc-4f25-8db6-eec91698122f, name: HP-Pavilion-Gaming-Laptop-59378
+16:02:58.768 [vert.x-worker-thread-0] INFO  org.jgroups.protocols.FD_SOCK2:  server listening on *.7900
+16:03:00.771 [vert.x-worker-thread-0] INFO  org.jgroups.protocols.pbcast.GMS:  HP-Pavilion-Gaming-Laptop-59378: no members discovered after 2001 ms: creating cluster as coordinator
+16:03:00.784 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000094: Received new cluster view for channel ISPN: [HP-Pavilion-Gaming-Laptop-59378|0] (1) [HP-Pavilion-Gaming-Laptop-59378]
+16:03:00.789 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000079: Channel `ISPN` local address is `HP-Pavilion-Gaming-Laptop-59378`, physical addresses are `[192.168.43.241:7800]`
+16:03:01.228 [vert.x-eventloop-thread-4] INFO  org.jboss.threads:  JBoss Threads version 2.3.3.Final
+16:03:01.233 [vert.x-eventloop-thread-2] INFO  org.example.verticle.MainVerticle:  Deploy Verticles
+16:03:01.234 [vert.x-eventloop-thread-0] INFO  org.example.Main:  Vertx Instance Id: 09e1de48-1153-4feb-8b7d-8f5f9b2088c8
+16:05:09.920 [main] INFO  i.v.e.c.i.InfinispanClusterManager:  Cluster Manager is using Infinispan 14.0.19.Final
+16:05:09.926 [vert.x-worker-thread-0] WARN  i.v.e.c.i.InfinispanClusterManager:  Cannot find Infinispan config 'infinispan.xml', using default
+16:05:10.194 [vert.x-worker-thread-0] WARN  org.infinispan.CONFIG:  ISPN000569: Unable to persist Infinispan internal caches as no global state enabled
+16:05:10.225 [vert.x-worker-thread-0] INFO  org.infinispan.CONTAINER:  ISPN000556: Starting user marshaller 'org.infinispan.commons.marshall.ImmutableProtoStreamMarshaller'
+16:05:10.297 [vert.x-worker-thread-0] WARN  o.i.c.util.StringPropertyReplacer:  ISPN000901: Property jgroups.external_port could not be replaced as intended!
+16:05:10.298 [vert.x-worker-thread-0] WARN  o.i.c.util.StringPropertyReplacer:  ISPN000901: Property jgroups.external_addr could not be replaced as intended!
+16:05:10.352 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000078: Starting JGroups channel `ISPN` with stack `jgroups`
+16:05:10.354 [vert.x-worker-thread-0] INFO  org.jgroups.JChannel:  local_addr: 1fc810a9-96a6-43bf-98e8-6cb7c3dfbf14, name: HP-Pavilion-Gaming-Laptop-46012
+16:05:10.360 [vert.x-worker-thread-0] INFO  org.jgroups.protocols.FD_SOCK2:  server listening on *.7900
+16:05:12.362 [vert.x-worker-thread-0] INFO  org.jgroups.protocols.pbcast.GMS:  HP-Pavilion-Gaming-Laptop-46012: no members discovered after 2000 ms: creating cluster as coordinator
+16:05:12.376 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000094: Received new cluster view for channel ISPN: [HP-Pavilion-Gaming-Laptop-46012|0] (1) [HP-Pavilion-Gaming-Laptop-46012]
+16:05:12.381 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000079: Channel `ISPN` local address is `HP-Pavilion-Gaming-Laptop-46012`, physical addresses are `[192.168.43.241:7800]`
+16:05:12.806 [vert.x-eventloop-thread-4] INFO  org.jboss.threads:  JBoss Threads version 2.3.3.Final
+16:05:12.812 [vert.x-eventloop-thread-2] INFO  org.example.verticle.MainVerticle:  Deploy Verticles
+16:05:12.812 [vert.x-eventloop-thread-0] INFO  org.example.Main:  Vertx Instance Id: 74bce68a-8900-4bb6-bf5f-5293d74ad71e
+16:10:10.802 [main] INFO  i.v.e.c.i.InfinispanClusterManager:  Cluster Manager is using Infinispan 14.0.19.Final
+16:10:10.807 [vert.x-worker-thread-0] WARN  i.v.e.c.i.InfinispanClusterManager:  Cannot find Infinispan config 'infinispan.xml', using default
+16:10:11.107 [vert.x-worker-thread-0] WARN  org.infinispan.CONFIG:  ISPN000569: Unable to persist Infinispan internal caches as no global state enabled
+16:10:11.130 [vert.x-worker-thread-0] INFO  org.infinispan.CONTAINER:  ISPN000556: Starting user marshaller 'org.infinispan.commons.marshall.ImmutableProtoStreamMarshaller'
+16:10:11.201 [vert.x-worker-thread-0] WARN  o.i.c.util.StringPropertyReplacer:  ISPN000901: Property jgroups.external_port could not be replaced as intended!
+16:10:11.201 [vert.x-worker-thread-0] WARN  o.i.c.util.StringPropertyReplacer:  ISPN000901: Property jgroups.external_addr could not be replaced as intended!
+16:10:11.254 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000078: Starting JGroups channel `ISPN` with stack `jgroups`
+16:10:11.255 [vert.x-worker-thread-0] INFO  org.jgroups.JChannel:  local_addr: d38c500a-09cb-40f4-814c-3739d79e2f09, name: HP-Pavilion-Gaming-Laptop-27817
+16:10:11.261 [vert.x-worker-thread-0] INFO  org.jgroups.protocols.FD_SOCK2:  server listening on *.7900
+16:10:13.263 [vert.x-worker-thread-0] INFO  org.jgroups.protocols.pbcast.GMS:  HP-Pavilion-Gaming-Laptop-27817: no members discovered after 2000 ms: creating cluster as coordinator
+16:10:13.279 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000094: Received new cluster view for channel ISPN: [HP-Pavilion-Gaming-Laptop-27817|0] (1) [HP-Pavilion-Gaming-Laptop-27817]
+16:10:13.285 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000079: Channel `ISPN` local address is `HP-Pavilion-Gaming-Laptop-27817`, physical addresses are `[192.168.43.241:7800]`
+16:10:13.687 [vert.x-eventloop-thread-4] INFO  org.jboss.threads:  JBoss Threads version 2.3.3.Final
+16:10:13.692 [vert.x-eventloop-thread-2] INFO  org.example.verticle.MainVerticle:  Deploy Verticles
+16:10:13.693 [vert.x-eventloop-thread-0] INFO  org.example.Main:  Vertx Instance Id: dc16c5b0-79a7-4316-88f1-ce33341f5601
+16:10:29.031 [main] INFO  i.v.e.c.i.InfinispanClusterManager:  Cluster Manager is using Infinispan 14.0.19.Final
+16:10:29.035 [vert.x-worker-thread-0] WARN  i.v.e.c.i.InfinispanClusterManager:  Cannot find Infinispan config 'infinispan.xml', using default
+16:10:29.313 [vert.x-worker-thread-0] WARN  org.infinispan.CONFIG:  ISPN000569: Unable to persist Infinispan internal caches as no global state enabled
+16:10:29.346 [vert.x-worker-thread-0] INFO  org.infinispan.CONTAINER:  ISPN000556: Starting user marshaller 'org.infinispan.commons.marshall.ImmutableProtoStreamMarshaller'
+16:10:29.413 [vert.x-worker-thread-0] WARN  o.i.c.util.StringPropertyReplacer:  ISPN000901: Property jgroups.external_port could not be replaced as intended!
+16:10:29.414 [vert.x-worker-thread-0] WARN  o.i.c.util.StringPropertyReplacer:  ISPN000901: Property jgroups.external_addr could not be replaced as intended!
+16:10:29.468 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000078: Starting JGroups channel `ISPN` with stack `jgroups`
+16:10:29.470 [vert.x-worker-thread-0] INFO  org.jgroups.JChannel:  local_addr: 75cf73e0-ae24-42e9-8411-496311747a9c, name: HP-Pavilion-Gaming-Laptop-27912
+16:10:29.480 [vert.x-worker-thread-0] INFO  org.jgroups.protocols.FD_SOCK2:  server listening on *.7900
+16:10:31.482 [vert.x-worker-thread-0] INFO  org.jgroups.protocols.pbcast.GMS:  HP-Pavilion-Gaming-Laptop-27912: no members discovered after 2000 ms: creating cluster as coordinator
+16:10:31.488 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000094: Received new cluster view for channel ISPN: [HP-Pavilion-Gaming-Laptop-27912|0] (1) [HP-Pavilion-Gaming-Laptop-27912]
+16:10:31.491 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000079: Channel `ISPN` local address is `HP-Pavilion-Gaming-Laptop-27912`, physical addresses are `[192.168.43.241:7800]`
+16:10:31.904 [vert.x-eventloop-thread-4] INFO  org.jboss.threads:  JBoss Threads version 2.3.3.Final
+16:10:31.910 [vert.x-eventloop-thread-2] INFO  org.example.verticle.MainVerticle:  Deploy Verticles
+16:10:31.910 [vert.x-eventloop-thread-0] INFO  org.example.Main:  Vertx Instance Id: 23a83bc2-ecd6-448b-a2a4-3685f4380973
+16:15:40.480 [main] INFO  i.v.e.c.i.InfinispanClusterManager:  Cluster Manager is using Infinispan 14.0.19.Final
+16:15:40.484 [vert.x-worker-thread-0] WARN  i.v.e.c.i.InfinispanClusterManager:  Cannot find Infinispan config 'infinispan.xml', using default
+16:15:40.775 [vert.x-worker-thread-0] WARN  org.infinispan.CONFIG:  ISPN000569: Unable to persist Infinispan internal caches as no global state enabled
+16:15:40.795 [vert.x-worker-thread-0] INFO  org.infinispan.CONTAINER:  ISPN000556: Starting user marshaller 'org.infinispan.commons.marshall.ImmutableProtoStreamMarshaller'
+16:15:40.862 [vert.x-worker-thread-0] WARN  o.i.c.util.StringPropertyReplacer:  ISPN000901: Property jgroups.external_port could not be replaced as intended!
+16:15:40.862 [vert.x-worker-thread-0] WARN  o.i.c.util.StringPropertyReplacer:  ISPN000901: Property jgroups.external_addr could not be replaced as intended!
+16:15:40.914 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000078: Starting JGroups channel `ISPN` with stack `jgroups`
+16:15:40.916 [vert.x-worker-thread-0] INFO  org.jgroups.JChannel:  local_addr: dcdc53a5-bff2-4759-8a4f-d09138623759, name: HP-Pavilion-Gaming-Laptop-50815
+16:15:40.922 [vert.x-worker-thread-0] INFO  org.jgroups.protocols.FD_SOCK2:  server listening on *.7900
+16:15:42.924 [vert.x-worker-thread-0] INFO  org.jgroups.protocols.pbcast.GMS:  HP-Pavilion-Gaming-Laptop-50815: no members discovered after 2001 ms: creating cluster as coordinator
+16:15:42.940 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000094: Received new cluster view for channel ISPN: [HP-Pavilion-Gaming-Laptop-50815|0] (1) [HP-Pavilion-Gaming-Laptop-50815]
+16:15:42.945 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000079: Channel `ISPN` local address is `HP-Pavilion-Gaming-Laptop-50815`, physical addresses are `[192.168.43.241:7800]`
+16:15:43.347 [vert.x-eventloop-thread-4] INFO  org.jboss.threads:  JBoss Threads version 2.3.3.Final
+16:15:43.353 [vert.x-eventloop-thread-2] INFO  org.example.verticle.MainVerticle:  Deploy Verticles
+16:15:43.353 [vert.x-eventloop-thread-0] INFO  org.example.Main:  Vertx Instance Id: 16cfc825-a7b3-4ab5-9f86-1222a4223224
+16:16:06.004 [main] INFO  i.v.e.c.i.InfinispanClusterManager:  Cluster Manager is using Infinispan 14.0.19.Final
+16:16:06.008 [vert.x-worker-thread-0] WARN  i.v.e.c.i.InfinispanClusterManager:  Cannot find Infinispan config 'infinispan.xml', using default
+16:16:06.300 [vert.x-worker-thread-0] WARN  org.infinispan.CONFIG:  ISPN000569: Unable to persist Infinispan internal caches as no global state enabled
+16:16:06.321 [vert.x-worker-thread-0] INFO  org.infinispan.CONTAINER:  ISPN000556: Starting user marshaller 'org.infinispan.commons.marshall.ImmutableProtoStreamMarshaller'
+16:16:06.387 [vert.x-worker-thread-0] WARN  o.i.c.util.StringPropertyReplacer:  ISPN000901: Property jgroups.external_port could not be replaced as intended!
+16:16:06.387 [vert.x-worker-thread-0] WARN  o.i.c.util.StringPropertyReplacer:  ISPN000901: Property jgroups.external_addr could not be replaced as intended!
+16:16:06.446 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000078: Starting JGroups channel `ISPN` with stack `jgroups`
+16:16:06.448 [vert.x-worker-thread-0] INFO  org.jgroups.JChannel:  local_addr: 1d65aeb5-efca-4c57-8479-932d350d8c02, name: HP-Pavilion-Gaming-Laptop-18566
+16:16:06.454 [vert.x-worker-thread-0] INFO  org.jgroups.protocols.FD_SOCK2:  server listening on *.7900
+16:16:08.457 [vert.x-worker-thread-0] INFO  org.jgroups.protocols.pbcast.GMS:  HP-Pavilion-Gaming-Laptop-18566: no members discovered after 2000 ms: creating cluster as coordinator
+16:16:08.469 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000094: Received new cluster view for channel ISPN: [HP-Pavilion-Gaming-Laptop-18566|0] (1) [HP-Pavilion-Gaming-Laptop-18566]
+16:16:08.474 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000079: Channel `ISPN` local address is `HP-Pavilion-Gaming-Laptop-18566`, physical addresses are `[192.168.43.241:7800]`
+16:16:08.905 [vert.x-eventloop-thread-4] INFO  org.jboss.threads:  JBoss Threads version 2.3.3.Final
+16:16:08.912 [vert.x-eventloop-thread-2] INFO  org.example.verticle.MainVerticle:  Deploy Verticles
+16:16:08.913 [vert.x-eventloop-thread-0] INFO  org.example.Main:  Vertx Instance Id: 68d91cd3-daf8-4fe5-b88c-807bf6d44929
+16:20:20.754 [main] INFO  i.v.e.c.i.InfinispanClusterManager:  Cluster Manager is using Infinispan 14.0.19.Final
+16:20:20.758 [vert.x-worker-thread-0] WARN  i.v.e.c.i.InfinispanClusterManager:  Cannot find Infinispan config 'infinispan.xml', using default
+16:20:21.035 [vert.x-worker-thread-0] WARN  org.infinispan.CONFIG:  ISPN000569: Unable to persist Infinispan internal caches as no global state enabled
+16:20:21.056 [vert.x-worker-thread-0] INFO  org.infinispan.CONTAINER:  ISPN000556: Starting user marshaller 'org.infinispan.commons.marshall.ImmutableProtoStreamMarshaller'
+16:20:21.121 [vert.x-worker-thread-0] WARN  o.i.c.util.StringPropertyReplacer:  ISPN000901: Property jgroups.external_port could not be replaced as intended!
+16:20:21.121 [vert.x-worker-thread-0] WARN  o.i.c.util.StringPropertyReplacer:  ISPN000901: Property jgroups.external_addr could not be replaced as intended!
+16:20:21.175 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000078: Starting JGroups channel `ISPN` with stack `jgroups`
+16:20:21.176 [vert.x-worker-thread-0] INFO  org.jgroups.JChannel:  local_addr: 97b6c8ba-120c-4da9-ad36-7b5d72d06073, name: HP-Pavilion-Gaming-Laptop-34184
+16:20:21.182 [vert.x-worker-thread-0] INFO  org.jgroups.protocols.FD_SOCK2:  server listening on *.7900
+16:20:23.185 [vert.x-worker-thread-0] INFO  org.jgroups.protocols.pbcast.GMS:  HP-Pavilion-Gaming-Laptop-34184: no members discovered after 2000 ms: creating cluster as coordinator
+16:20:23.193 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000094: Received new cluster view for channel ISPN: [HP-Pavilion-Gaming-Laptop-34184|0] (1) [HP-Pavilion-Gaming-Laptop-34184]
+16:20:23.196 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000079: Channel `ISPN` local address is `HP-Pavilion-Gaming-Laptop-34184`, physical addresses are `[192.168.43.241:7800]`
+16:20:23.600 [vert.x-eventloop-thread-4] INFO  org.jboss.threads:  JBoss Threads version 2.3.3.Final
+16:20:23.606 [vert.x-eventloop-thread-2] INFO  org.example.verticle.MainVerticle:  Deploy Verticles
+16:20:23.606 [vert.x-eventloop-thread-0] INFO  org.example.Main:  Vertx Instance Id: 75d4daab-ad15-40e2-b2b1-461708131ccd
+16:20:31.693 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:20:33.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:20:35.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:20:37.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:20:39.597 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:20:41.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:20:43.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:20:45.597 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:20:47.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:20:49.597 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:20:51.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:20:53.597 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:20:55.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:20:57.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:20:59.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:21:01.597 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:21:03.597 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:21:05.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:21:07.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:21:09.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:21:11.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:21:13.597 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:21:15.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:21:17.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:21:19.597 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:21:21.597 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:21:23.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:21:25.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:21:27.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:21:29.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:21:31.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:21:33.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:21:35.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:21:37.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:21:39.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:21:41.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:21:43.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:21:45.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:21:47.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:21:49.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:21:51.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:21:53.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:21:55.597 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:21:57.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:21:59.597 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:22:01.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:22:03.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:22:05.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:22:07.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:22:09.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:22:11.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:22:13.597 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:22:15.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:22:17.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:22:19.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:22:21.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:22:23.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:22:25.597 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:22:27.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:22:29.597 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:22:31.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:22:33.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:22:35.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:22:37.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:22:39.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:22:41.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:22:43.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:22:45.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:22:47.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:22:49.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:22:51.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:22:53.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:22:55.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:22:57.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:22:59.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:23:01.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:23:03.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:23:05.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:23:07.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:23:09.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:23:11.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:23:13.597 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:23:15.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:23:17.597 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:23:19.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:23:21.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:23:23.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:23:25.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:23:27.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:23:29.597 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:23:31.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:23:33.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:23:35.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:23:37.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:23:39.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:23:41.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:23:43.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:23:45.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:23:47.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:23:49.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:23:51.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:23:53.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:23:55.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:23:57.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:23:59.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:24:01.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:24:03.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:24:05.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:24:07.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:24:09.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:24:11.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:24:13.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:24:15.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:24:17.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:24:19.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:24:21.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:24:23.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:24:25.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:24:27.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:24:29.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:24:31.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:24:33.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:24:35.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:24:37.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:24:39.597 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:24:41.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:24:43.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:24:45.597 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:24:47.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:24:49.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:24:51.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:24:53.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:24:55.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:24:57.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:24:59.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:25:01.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:25:03.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:25:05.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:25:07.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:25:09.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:25:11.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:25:13.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:25:15.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:25:17.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:25:19.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:25:21.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:25:23.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:25:25.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:25:27.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:25:29.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:25:31.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:25:33.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:25:35.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:25:37.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:25:39.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:25:41.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:25:43.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:25:45.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:25:47.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:25:49.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:25:51.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:25:53.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:25:55.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:25:57.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:25:59.597 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:26:01.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:26:03.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:26:05.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:26:07.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:26:09.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:26:11.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:26:13.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:26:15.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:26:17.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:26:19.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:26:21.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:26:23.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:26:25.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:26:27.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:26:29.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:26:31.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:26:33.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:26:35.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:26:37.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:26:39.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:26:41.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:26:43.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:26:45.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:26:47.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:26:49.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:26:51.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:26:53.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:26:55.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:26:57.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:26:59.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:27:01.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:27:03.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:27:05.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:27:07.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:27:09.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:27:11.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:27:13.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:27:15.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:27:17.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:27:19.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:27:21.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:27:23.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:27:25.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:27:27.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:27:29.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:27:31.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:27:33.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:27:35.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:27:37.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:27:39.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:27:41.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:27:43.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:27:45.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:27:47.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:27:49.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:27:51.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:27:53.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:27:55.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:27:57.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:27:59.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:28:01.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:28:03.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:28:05.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:28:07.595 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:28:09.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:28:11.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:28:13.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:28:15.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:28:17.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:28:19.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:28:21.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:28:23.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:28:25.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:28:27.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:28:29.596 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:28:31.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:28:33.594 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:28:36.126 [main] INFO  i.v.e.c.i.InfinispanClusterManager:  Cluster Manager is using Infinispan 14.0.19.Final
+16:28:36.130 [vert.x-worker-thread-0] WARN  i.v.e.c.i.InfinispanClusterManager:  Cannot find Infinispan config 'infinispan.xml', using default
+16:28:36.423 [vert.x-worker-thread-0] WARN  org.infinispan.CONFIG:  ISPN000569: Unable to persist Infinispan internal caches as no global state enabled
+16:28:36.446 [vert.x-worker-thread-0] INFO  org.infinispan.CONTAINER:  ISPN000556: Starting user marshaller 'org.infinispan.commons.marshall.ImmutableProtoStreamMarshaller'
+16:28:36.513 [vert.x-worker-thread-0] WARN  o.i.c.util.StringPropertyReplacer:  ISPN000901: Property jgroups.external_port could not be replaced as intended!
+16:28:36.513 [vert.x-worker-thread-0] WARN  o.i.c.util.StringPropertyReplacer:  ISPN000901: Property jgroups.external_addr could not be replaced as intended!
+16:28:36.567 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000078: Starting JGroups channel `ISPN` with stack `jgroups`
+16:28:36.569 [vert.x-worker-thread-0] INFO  org.jgroups.JChannel:  local_addr: 577c6309-f7d2-4425-8a15-a88a3154a638, name: HP-Pavilion-Gaming-Laptop-3018
+16:28:36.575 [vert.x-worker-thread-0] INFO  org.jgroups.protocols.FD_SOCK2:  server listening on *.7900
+16:28:38.578 [vert.x-worker-thread-0] INFO  org.jgroups.protocols.pbcast.GMS:  HP-Pavilion-Gaming-Laptop-3018: no members discovered after 2001 ms: creating cluster as coordinator
+16:28:38.584 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000094: Received new cluster view for channel ISPN: [HP-Pavilion-Gaming-Laptop-3018|0] (1) [HP-Pavilion-Gaming-Laptop-3018]
+16:28:38.588 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000079: Channel `ISPN` local address is `HP-Pavilion-Gaming-Laptop-3018`, physical addresses are `[192.168.43.241:7800]`
+16:28:38.989 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  WebSocket address updated to: ws://localhost:33407/prices
+16:28:38.992 [vert.x-eventloop-thread-4] INFO  org.jboss.threads:  JBoss Threads version 2.3.3.Final
+16:28:38.997 [vert.x-eventloop-thread-2] INFO  org.example.verticle.MainVerticle:  Deploy Verticles
+16:28:38.998 [vert.x-eventloop-thread-0] INFO  org.example.Main:  Vertx Instance Id: 5a1d5498-9fc1-4547-8e5c-645154925031
+16:30:04.172 [main] INFO  i.v.e.c.i.InfinispanClusterManager:  Cluster Manager is using Infinispan 14.0.19.Final
+16:30:04.176 [vert.x-worker-thread-0] WARN  i.v.e.c.i.InfinispanClusterManager:  Cannot find Infinispan config 'infinispan.xml', using default
+16:30:04.444 [vert.x-worker-thread-0] WARN  org.infinispan.CONFIG:  ISPN000569: Unable to persist Infinispan internal caches as no global state enabled
+16:30:04.474 [vert.x-worker-thread-0] INFO  org.infinispan.CONTAINER:  ISPN000556: Starting user marshaller 'org.infinispan.commons.marshall.ImmutableProtoStreamMarshaller'
+16:30:04.540 [vert.x-worker-thread-0] WARN  o.i.c.util.StringPropertyReplacer:  ISPN000901: Property jgroups.external_port could not be replaced as intended!
+16:30:04.541 [vert.x-worker-thread-0] WARN  o.i.c.util.StringPropertyReplacer:  ISPN000901: Property jgroups.external_addr could not be replaced as intended!
+16:30:04.593 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000078: Starting JGroups channel `ISPN` with stack `jgroups`
+16:30:04.594 [vert.x-worker-thread-0] INFO  org.jgroups.JChannel:  local_addr: 390b09f3-77fe-4e8b-b674-1c7d207847f2, name: HP-Pavilion-Gaming-Laptop-56010
+16:30:04.601 [vert.x-worker-thread-0] INFO  org.jgroups.protocols.FD_SOCK2:  server listening on *.7900
+16:30:06.603 [vert.x-worker-thread-0] INFO  org.jgroups.protocols.pbcast.GMS:  HP-Pavilion-Gaming-Laptop-56010: no members discovered after 2001 ms: creating cluster as coordinator
+16:30:06.609 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000094: Received new cluster view for channel ISPN: [HP-Pavilion-Gaming-Laptop-56010|0] (1) [HP-Pavilion-Gaming-Laptop-56010]
+16:30:06.612 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000079: Channel `ISPN` local address is `HP-Pavilion-Gaming-Laptop-56010`, physical addresses are `[192.168.43.241:7800]`
+16:30:07.016 [vert.x-eventloop-thread-4] INFO  org.jboss.threads:  JBoss Threads version 2.3.3.Final
+16:30:07.021 [vert.x-eventloop-thread-2] INFO  org.example.verticle.MainVerticle:  Deploy Verticles
+16:30:07.021 [vert.x-eventloop-thread-0] INFO  org.example.Main:  Vertx Instance Id: 9f916205-b92e-4395-a160-644f76519d85
+16:31:21.103 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:31:23.010 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:31:25.011 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:31:27.010 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:31:29.011 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:31:31.011 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:31:33.011 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:31:35.011 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:31:37.012 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:31:39.012 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:31:41.011 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:31:43.010 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:31:45.011 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:31:47.011 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:31:49.012 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:31:51.011 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:31:53.010 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:31:55.010 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:31:57.011 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:31:59.010 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:32:01.011 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:32:03.011 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:32:05.011 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:32:07.010 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:32:09.011 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:32:11.010 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:32:13.011 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:32:15.011 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:32:17.011 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:32:19.010 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:32:21.011 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:32:23.010 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:32:25.011 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:32:27.010 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:32:29.010 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:32:31.011 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:32:33.011 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:32:35.011 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:32:37.011 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:32:39.011 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:32:41.012 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:32:43.011 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:32:45.011 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:32:47.011 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:32:49.011 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+16:32:51.011 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+11:22:06.060 [main] INFO  i.v.e.c.i.InfinispanClusterManager:  Cluster Manager is using Infinispan 14.0.19.Final
+11:22:06.106 [vert.x-worker-thread-0] WARN  i.v.e.c.i.InfinispanClusterManager:  Cannot find Infinispan config 'infinispan.xml', using default
+11:22:07.193 [vert.x-eventloop-thread-0] ERROR io.vertx.core.impl.VertxImpl:  Failed to initialize clustered Vert.x
+java.lang.NoClassDefFoundError: javax/transaction/TransactionManager
+	at org.infinispan.configuration.cache.TransactionConfiguration.<clinit>(TransactionConfiguration.java:30)
+	at org.infinispan.configuration.cache.TransactionConfigurationBuilder.<init>(TransactionConfigurationBuilder.java:44)
+	at org.infinispan.configuration.cache.ConfigurationBuilder.<init>(ConfigurationBuilder.java:55)
+	at org.infinispan.configuration.parsing.ConfigurationBuilderHolder.newConfigurationBuilder(ConfigurationBuilderHolder.java:56)
+	at org.infinispan.configuration.parsing.CacheParser.getConfigurationBuilder(CacheParser.java:1171)
+	at org.infinispan.configuration.parsing.CacheParser.parseDistributedCache(CacheParser.java:1035)
+	at org.infinispan.configuration.parsing.Parser.parseContainer(Parser.java:784)
+	at org.infinispan.configuration.parsing.Parser.readElement(Parser.java:87)
+	at org.infinispan.configuration.parsing.ParserRegistry.parseElement(ParserRegistry.java:212)
+	at org.infinispan.configuration.parsing.ParserRegistry.parse(ParserRegistry.java:195)
+	at org.infinispan.configuration.parsing.ParserRegistry.parse(ParserRegistry.java:181)
+	at org.infinispan.configuration.parsing.ParserRegistry.parse(ParserRegistry.java:164)
+	at org.infinispan.configuration.parsing.ParserRegistry.parse(ParserRegistry.java:112)
+	at io.vertx.ext.cluster.infinispan.InfinispanClusterManager.lambda$join$5(InfinispanClusterManager.java:239)
+	at io.vertx.core.impl.ContextBase.lambda$null$0(ContextBase.java:137)
+	at io.vertx.core.impl.ContextInternal.dispatch(ContextInternal.java:264)
+	at io.vertx.core.impl.ContextBase.lambda$executeBlocking$1(ContextBase.java:135)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.ClassNotFoundException: javax.transaction.TransactionManager
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+	... 21 common frames omitted
+11:22:07.249 [vert.x-eventloop-thread-0] ERROR io.vertx.core.impl.VertxImpl:  Failed to leave cluster
+java.lang.NullPointerException: Cannot invoke "io.vertx.ext.cluster.infinispan.impl.SubsCacheHelper.close()" because "this.subsCacheHelper" is null
+	at io.vertx.ext.cluster.infinispan.InfinispanClusterManager.lambda$leave$6(InfinispanClusterManager.java:290)
+	at io.vertx.core.impl.ContextBase.lambda$null$0(ContextBase.java:137)
+	at io.vertx.core.impl.ContextInternal.dispatch(ContextInternal.java:264)
+	at io.vertx.core.impl.ContextBase.lambda$executeBlocking$1(ContextBase.java:135)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+11:22:07.292 [vert.x-eventloop-thread-8] ERROR org.example.Main:  Main
+java.lang.NoClassDefFoundError: javax/transaction/TransactionManager
+	at org.infinispan.configuration.cache.TransactionConfiguration.<clinit>(TransactionConfiguration.java:30)
+	at org.infinispan.configuration.cache.TransactionConfigurationBuilder.<init>(TransactionConfigurationBuilder.java:44)
+	at org.infinispan.configuration.cache.ConfigurationBuilder.<init>(ConfigurationBuilder.java:55)
+	at org.infinispan.configuration.parsing.ConfigurationBuilderHolder.newConfigurationBuilder(ConfigurationBuilderHolder.java:56)
+	at org.infinispan.configuration.parsing.CacheParser.getConfigurationBuilder(CacheParser.java:1171)
+	at org.infinispan.configuration.parsing.CacheParser.parseDistributedCache(CacheParser.java:1035)
+	at org.infinispan.configuration.parsing.Parser.parseContainer(Parser.java:784)
+	at org.infinispan.configuration.parsing.Parser.readElement(Parser.java:87)
+	at org.infinispan.configuration.parsing.ParserRegistry.parseElement(ParserRegistry.java:212)
+	at org.infinispan.configuration.parsing.ParserRegistry.parse(ParserRegistry.java:195)
+	at org.infinispan.configuration.parsing.ParserRegistry.parse(ParserRegistry.java:181)
+	at org.infinispan.configuration.parsing.ParserRegistry.parse(ParserRegistry.java:164)
+	at org.infinispan.configuration.parsing.ParserRegistry.parse(ParserRegistry.java:112)
+	at io.vertx.ext.cluster.infinispan.InfinispanClusterManager.lambda$join$5(InfinispanClusterManager.java:239)
+	at io.vertx.core.impl.ContextBase.lambda$null$0(ContextBase.java:137)
+	at io.vertx.core.impl.ContextInternal.dispatch(ContextInternal.java:264)
+	at io.vertx.core.impl.ContextBase.lambda$executeBlocking$1(ContextBase.java:135)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.ClassNotFoundException: javax.transaction.TransactionManager
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+	... 21 common frames omitted
+11:22:55.025 [main] INFO  i.v.e.c.i.InfinispanClusterManager:  Cluster Manager is using Infinispan 14.0.19.Final
+11:22:55.053 [vert.x-worker-thread-0] WARN  i.v.e.c.i.InfinispanClusterManager:  Cannot find Infinispan config 'infinispan.xml', using default
+11:22:56.187 [vert.x-eventloop-thread-0] ERROR io.vertx.core.impl.VertxImpl:  Failed to initialize clustered Vert.x
+java.lang.NoClassDefFoundError: javax/transaction/TransactionManager
+	at org.infinispan.configuration.cache.TransactionConfiguration.<clinit>(TransactionConfiguration.java:30)
+	at org.infinispan.configuration.cache.TransactionConfigurationBuilder.<init>(TransactionConfigurationBuilder.java:44)
+	at org.infinispan.configuration.cache.ConfigurationBuilder.<init>(ConfigurationBuilder.java:55)
+	at org.infinispan.configuration.parsing.ConfigurationBuilderHolder.newConfigurationBuilder(ConfigurationBuilderHolder.java:56)
+	at org.infinispan.configuration.parsing.CacheParser.getConfigurationBuilder(CacheParser.java:1171)
+	at org.infinispan.configuration.parsing.CacheParser.parseDistributedCache(CacheParser.java:1035)
+	at org.infinispan.configuration.parsing.Parser.parseContainer(Parser.java:784)
+	at org.infinispan.configuration.parsing.Parser.readElement(Parser.java:87)
+	at org.infinispan.configuration.parsing.ParserRegistry.parseElement(ParserRegistry.java:212)
+	at org.infinispan.configuration.parsing.ParserRegistry.parse(ParserRegistry.java:195)
+	at org.infinispan.configuration.parsing.ParserRegistry.parse(ParserRegistry.java:181)
+	at org.infinispan.configuration.parsing.ParserRegistry.parse(ParserRegistry.java:164)
+	at org.infinispan.configuration.parsing.ParserRegistry.parse(ParserRegistry.java:112)
+	at io.vertx.ext.cluster.infinispan.InfinispanClusterManager.lambda$join$5(InfinispanClusterManager.java:239)
+	at io.vertx.core.impl.ContextBase.lambda$null$0(ContextBase.java:137)
+	at io.vertx.core.impl.ContextInternal.dispatch(ContextInternal.java:264)
+	at io.vertx.core.impl.ContextBase.lambda$executeBlocking$1(ContextBase.java:135)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.ClassNotFoundException: javax.transaction.TransactionManager
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+	... 21 common frames omitted
+11:22:56.239 [vert.x-eventloop-thread-0] ERROR io.vertx.core.impl.VertxImpl:  Failed to leave cluster
+java.lang.NullPointerException: Cannot invoke "io.vertx.ext.cluster.infinispan.impl.SubsCacheHelper.close()" because "this.subsCacheHelper" is null
+	at io.vertx.ext.cluster.infinispan.InfinispanClusterManager.lambda$leave$6(InfinispanClusterManager.java:290)
+	at io.vertx.core.impl.ContextBase.lambda$null$0(ContextBase.java:137)
+	at io.vertx.core.impl.ContextInternal.dispatch(ContextInternal.java:264)
+	at io.vertx.core.impl.ContextBase.lambda$executeBlocking$1(ContextBase.java:135)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+11:22:56.273 [vert.x-eventloop-thread-8] ERROR org.example.Main:  Main
+java.lang.NoClassDefFoundError: javax/transaction/TransactionManager
+	at org.infinispan.configuration.cache.TransactionConfiguration.<clinit>(TransactionConfiguration.java:30)
+	at org.infinispan.configuration.cache.TransactionConfigurationBuilder.<init>(TransactionConfigurationBuilder.java:44)
+	at org.infinispan.configuration.cache.ConfigurationBuilder.<init>(ConfigurationBuilder.java:55)
+	at org.infinispan.configuration.parsing.ConfigurationBuilderHolder.newConfigurationBuilder(ConfigurationBuilderHolder.java:56)
+	at org.infinispan.configuration.parsing.CacheParser.getConfigurationBuilder(CacheParser.java:1171)
+	at org.infinispan.configuration.parsing.CacheParser.parseDistributedCache(CacheParser.java:1035)
+	at org.infinispan.configuration.parsing.Parser.parseContainer(Parser.java:784)
+	at org.infinispan.configuration.parsing.Parser.readElement(Parser.java:87)
+	at org.infinispan.configuration.parsing.ParserRegistry.parseElement(ParserRegistry.java:212)
+	at org.infinispan.configuration.parsing.ParserRegistry.parse(ParserRegistry.java:195)
+	at org.infinispan.configuration.parsing.ParserRegistry.parse(ParserRegistry.java:181)
+	at org.infinispan.configuration.parsing.ParserRegistry.parse(ParserRegistry.java:164)
+	at org.infinispan.configuration.parsing.ParserRegistry.parse(ParserRegistry.java:112)
+	at io.vertx.ext.cluster.infinispan.InfinispanClusterManager.lambda$join$5(InfinispanClusterManager.java:239)
+	at io.vertx.core.impl.ContextBase.lambda$null$0(ContextBase.java:137)
+	at io.vertx.core.impl.ContextInternal.dispatch(ContextInternal.java:264)
+	at io.vertx.core.impl.ContextBase.lambda$executeBlocking$1(ContextBase.java:135)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.ClassNotFoundException: javax.transaction.TransactionManager
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+	... 21 common frames omitted
+11:23:43.991 [main] INFO  i.v.e.c.i.InfinispanClusterManager:  Cluster Manager is using Infinispan 14.0.19.Final
+11:23:44.008 [vert.x-worker-thread-0] WARN  i.v.e.c.i.InfinispanClusterManager:  Cannot find Infinispan config 'infinispan.xml', using default
+11:23:45.385 [vert.x-worker-thread-0] WARN  org.infinispan.CONFIG:  ISPN000569: Unable to persist Infinispan internal caches as no global state enabled
+11:23:45.459 [vert.x-worker-thread-0] INFO  org.infinispan.CONTAINER:  ISPN000556: Starting user marshaller 'org.infinispan.commons.marshall.ImmutableProtoStreamMarshaller'
+11:23:45.812 [vert.x-worker-thread-0] WARN  o.i.c.util.StringPropertyReplacer:  ISPN000901: Property jgroups.external_port could not be replaced as intended!
+11:23:45.813 [vert.x-worker-thread-0] WARN  o.i.c.util.StringPropertyReplacer:  ISPN000901: Property jgroups.external_addr could not be replaced as intended!
+11:23:50.036 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000078: Starting JGroups channel `ISPN` with stack `jgroups`
+11:23:50.043 [vert.x-worker-thread-0] INFO  org.jgroups.JChannel:  local_addr: daf9e24e-0b9c-4ba4-ad51-59bb25f21120, name: DESKTOP-8OVR9MJ-3172
+11:23:50.196 [vert.x-worker-thread-0] INFO  org.jgroups.protocols.FD_SOCK2:  server listening on *.7900
+11:23:52.213 [vert.x-worker-thread-0] INFO  org.jgroups.protocols.pbcast.GMS:  DESKTOP-8OVR9MJ-3172: no members discovered after 2013 ms: creating cluster as coordinator
+11:23:52.257 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000094: Received new cluster view for channel ISPN: [DESKTOP-8OVR9MJ-3172|0] (1) [DESKTOP-8OVR9MJ-3172]
+11:23:52.290 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000079: Channel `ISPN` local address is `DESKTOP-8OVR9MJ-3172`, physical addresses are `[10.2.0.2:7800]`
+11:23:54.337 [vert.x-eventloop-thread-4] INFO  org.jboss.threads:  JBoss Threads version 2.3.3.Final
+11:23:54.387 [vert.x-eventloop-thread-2] INFO  org.example.verticle.MainVerticle:  Deploy Verticles
+11:23:54.388 [vert.x-eventloop-thread-0] INFO  org.example.Main:  Vertx Instance Id: a2b60339-e9fe-44e5-a441-20810c37be62
+11:33:22.323 [main] INFO  i.v.e.c.i.InfinispanClusterManager:  Cluster Manager is using Infinispan 14.0.19.Final
+11:33:22.338 [vert.x-worker-thread-0] WARN  i.v.e.c.i.InfinispanClusterManager:  Cannot find Infinispan config 'infinispan.xml', using default
+11:33:23.855 [vert.x-worker-thread-0] WARN  org.infinispan.CONFIG:  ISPN000569: Unable to persist Infinispan internal caches as no global state enabled
+11:33:23.966 [vert.x-worker-thread-0] INFO  org.infinispan.CONTAINER:  ISPN000556: Starting user marshaller 'org.infinispan.commons.marshall.ImmutableProtoStreamMarshaller'
+11:33:24.211 [vert.x-worker-thread-0] WARN  o.i.c.util.StringPropertyReplacer:  ISPN000901: Property jgroups.external_port could not be replaced as intended!
+11:33:24.211 [vert.x-worker-thread-0] WARN  o.i.c.util.StringPropertyReplacer:  ISPN000901: Property jgroups.external_addr could not be replaced as intended!
+11:33:27.880 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000078: Starting JGroups channel `ISPN` with stack `jgroups`
+11:33:27.882 [vert.x-worker-thread-0] INFO  org.jgroups.JChannel:  local_addr: ae8630f9-e5d9-4675-a476-fd67f0b03f3b, name: DESKTOP-8OVR9MJ-26799
+11:33:28.029 [vert.x-worker-thread-0] INFO  org.jgroups.protocols.FD_SOCK2:  server listening on *.7900
+11:33:30.050 [vert.x-worker-thread-0] INFO  org.jgroups.protocols.pbcast.GMS:  DESKTOP-8OVR9MJ-26799: no members discovered after 2017 ms: creating cluster as coordinator
+11:33:30.064 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000094: Received new cluster view for channel ISPN: [DESKTOP-8OVR9MJ-26799|0] (1) [DESKTOP-8OVR9MJ-26799]
+11:33:30.072 [vert.x-worker-thread-0] INFO  org.infinispan.CLUSTER:  ISPN000079: Channel `ISPN` local address is `DESKTOP-8OVR9MJ-26799`, physical addresses are `[10.2.0.2:7800]`
+11:33:31.957 [vert.x-eventloop-thread-4] INFO  org.jboss.threads:  JBoss Threads version 2.3.3.Final
+11:33:31.976 [vert.x-eventloop-thread-2] INFO  org.example.verticle.MainVerticle:  Deploy Verticles
+11:33:31.976 [vert.x-eventloop-thread-0] INFO  org.example.Main:  Vertx Instance Id: bb8bf376-5ad5-413f-878f-365d050c0774
+11:33:55.154 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+11:33:55.931 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+11:33:57.940 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+11:33:59.935 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+11:34:01.940 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+11:34:03.939 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+11:34:05.940 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+11:34:07.932 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+11:34:09.944 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+11:34:11.933 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+11:34:13.933 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+11:34:15.941 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+11:34:17.951 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+11:34:19.940 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+11:34:21.931 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+11:34:23.944 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+11:34:25.932 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+11:34:27.940 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+11:34:29.932 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+11:34:31.938 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+11:34:33.945 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+11:34:35.947 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+11:34:37.946 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+11:34:39.948 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+11:34:41.947 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+11:34:43.932 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+11:34:45.935 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+11:34:47.939 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+11:34:49.935 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+11:34:51.935 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+11:34:53.946 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+11:34:55.941 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+11:34:57.940 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+11:34:59.935 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+11:35:01.935 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+11:35:03.939 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+11:35:05.938 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+11:35:07.932 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+11:35:09.949 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+11:35:11.936 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+11:35:13.946 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+11:35:15.941 [vert.x-eventloop-thread-5] ERROR o.e.controller.ConsumerController:  Failed to send message: WebSocket is closed
+11:35:15.942 [vert.x-eventloop-thread-5] ERROR o.e.controller.ConsumerController:  Subscription failed: WebSocket is closed
+11:35:17.942 [vert.x-eventloop-thread-5] ERROR o.e.controller.ConsumerController:  Failed to send message: WebSocket is closed
+11:35:17.942 [vert.x-eventloop-thread-5] ERROR o.e.controller.ConsumerController:  Subscription failed: WebSocket is closed
+11:35:17.945 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+11:35:19.935 [vert.x-eventloop-thread-5] ERROR o.e.controller.ConsumerController:  Failed to send message: WebSocket is closed
+11:35:19.936 [vert.x-eventloop-thread-5] ERROR o.e.controller.ConsumerController:  Subscription failed: WebSocket is closed
+11:35:19.936 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+11:35:21.933 [vert.x-eventloop-thread-5] ERROR o.e.controller.ConsumerController:  Failed to send message: WebSocket is closed
+11:35:21.934 [vert.x-eventloop-thread-5] ERROR o.e.controller.ConsumerController:  Subscription failed: WebSocket is closed
+11:35:21.937 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+11:35:23.935 [vert.x-eventloop-thread-5] ERROR o.e.controller.ConsumerController:  Failed to send message: WebSocket is closed
+11:35:23.935 [vert.x-eventloop-thread-5] ERROR o.e.controller.ConsumerController:  Subscription failed: WebSocket is closed
+11:35:23.937 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+11:35:25.937 [vert.x-eventloop-thread-5] ERROR o.e.controller.ConsumerController:  Failed to send message: WebSocket is closed
+11:35:25.938 [vert.x-eventloop-thread-5] ERROR o.e.controller.ConsumerController:  Subscription failed: WebSocket is closed
+11:35:25.940 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+11:35:27.938 [vert.x-eventloop-thread-5] ERROR o.e.controller.ConsumerController:  Failed to send message: WebSocket is closed
+11:35:27.939 [vert.x-eventloop-thread-5] ERROR o.e.controller.ConsumerController:  Subscription failed: WebSocket is closed
+11:35:27.940 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+11:35:29.934 [vert.x-eventloop-thread-5] ERROR o.e.controller.ConsumerController:  Failed to send message: WebSocket is closed
+11:35:29.934 [vert.x-eventloop-thread-5] ERROR o.e.controller.ConsumerController:  Subscription failed: WebSocket is closed
+11:35:29.936 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+11:35:31.939 [vert.x-eventloop-thread-5] ERROR o.e.controller.ConsumerController:  Failed to send message: WebSocket is closed
+11:35:31.940 [vert.x-eventloop-thread-5] ERROR o.e.controller.ConsumerController:  Subscription failed: WebSocket is closed
+11:35:31.942 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+11:35:33.943 [vert.x-eventloop-thread-5] ERROR o.e.controller.ConsumerController:  Failed to send message: WebSocket is closed
+11:35:33.944 [vert.x-eventloop-thread-5] ERROR o.e.controller.ConsumerController:  Subscription failed: WebSocket is closed
+11:35:33.946 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+11:35:35.944 [vert.x-eventloop-thread-5] ERROR o.e.controller.ConsumerController:  Failed to send message: WebSocket is closed
+11:35:35.945 [vert.x-eventloop-thread-5] ERROR o.e.controller.ConsumerController:  Subscription failed: WebSocket is closed
+11:35:35.946 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+11:35:37.943 [vert.x-eventloop-thread-5] ERROR o.e.controller.ConsumerController:  Failed to send message: WebSocket is closed
+11:35:37.944 [vert.x-eventloop-thread-5] ERROR o.e.controller.ConsumerController:  Subscription failed: WebSocket is closed
+11:35:37.947 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+11:35:39.937 [vert.x-eventloop-thread-5] ERROR o.e.controller.ConsumerController:  Failed to send message: WebSocket is closed
+11:35:39.937 [vert.x-eventloop-thread-5] ERROR o.e.controller.ConsumerController:  Subscription failed: WebSocket is closed
+11:35:39.939 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+11:35:41.938 [vert.x-eventloop-thread-5] ERROR o.e.controller.ConsumerController:  Failed to send message: WebSocket is closed
+11:35:41.939 [vert.x-eventloop-thread-5] ERROR o.e.controller.ConsumerController:  Subscription failed: WebSocket is closed
+11:35:41.941 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+11:35:43.946 [vert.x-eventloop-thread-5] ERROR o.e.controller.ConsumerController:  Failed to send message: WebSocket is closed
+11:35:43.946 [vert.x-eventloop-thread-5] ERROR o.e.controller.ConsumerController:  Subscription failed: WebSocket is closed
+11:35:43.948 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+11:35:45.936 [vert.x-eventloop-thread-5] ERROR o.e.controller.ConsumerController:  Failed to send message: WebSocket is closed
+11:35:45.937 [vert.x-eventloop-thread-5] ERROR o.e.controller.ConsumerController:  Subscription failed: WebSocket is closed
+11:35:45.938 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+11:35:47.942 [vert.x-eventloop-thread-5] ERROR o.e.controller.ConsumerController:  Failed to send message: WebSocket is closed
+11:35:47.942 [vert.x-eventloop-thread-5] ERROR o.e.controller.ConsumerController:  Subscription failed: WebSocket is closed
+11:35:47.944 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+11:35:49.933 [vert.x-eventloop-thread-5] ERROR o.e.controller.ConsumerController:  Failed to send message: WebSocket is closed
+11:35:49.933 [vert.x-eventloop-thread-5] ERROR o.e.controller.ConsumerController:  Subscription failed: WebSocket is closed
+11:35:49.935 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+11:35:51.939 [vert.x-eventloop-thread-5] ERROR o.e.controller.ConsumerController:  Failed to send message: WebSocket is closed
+11:35:51.940 [vert.x-eventloop-thread-5] ERROR o.e.controller.ConsumerController:  Subscription failed: WebSocket is closed
+11:35:51.942 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+11:35:53.943 [vert.x-eventloop-thread-5] ERROR o.e.controller.ConsumerController:  Failed to send message: WebSocket is closed
+11:35:53.944 [vert.x-eventloop-thread-5] ERROR o.e.controller.ConsumerController:  Subscription failed: WebSocket is closed
+11:35:53.945 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully
+11:35:55.942 [vert.x-eventloop-thread-5] ERROR o.e.controller.ConsumerController:  Failed to send message: WebSocket is closed
+11:35:55.943 [vert.x-eventloop-thread-5] ERROR o.e.controller.ConsumerController:  Subscription failed: WebSocket is closed
+11:35:55.945 [vert.x-eventloop-thread-5] INFO  o.e.controller.ConsumerController:  Message sent successfully

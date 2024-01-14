@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSocket Prize Consumer</title>
+</head>
+<body>
+<div id="output"></div>
+<script>
+    const webSocket = new WebSocket("ws://localhost:8081/prices");
+    const outputDiv = document.getElementById("output");
+
+    webSocket.onopen = function () {
+        console.log("WebSocket connection established!");
+
+        webSocket.onmessage = function (event) {
+            const rawJsonData = event.data;
+
+            console.log("Raw JSON data from WebSocket: ", rawJsonData);
+
+            try {
+                const pricesData = JSON.parse(rawJsonData);
+                outputDiv.innerHTML = `
+                    <p>Apple: $${pricesData.Apple.toFixed(2)}</p>
+                    <p>HP: $${pricesData.HP.toFixed(2)}</p>
+                    <p>Dell: $${pricesData.Dell.toFixed(2)}</p>
+                `;
+            } catch (error) {
+                console.error("Error parsing JSON:", error);
+            }
+        };
+    };
+
+    webSocket.onerror = function (error) {
+        console.error("WebSocket error:", error);
+    };
+
+    webSocket.onclose = function (event) {
+        console.log("WebSocket closed:", event);
+    };
+</script>
+</body>
+</html>
